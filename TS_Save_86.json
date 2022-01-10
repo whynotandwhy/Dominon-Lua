@@ -37,13 +37,6 @@
       "id": 44
     }
   },
-  "MusicPlayer": {
-    "RepeatSong": false,
-    "PlaylistEntry": -1,
-    "CurrentAudioTitle": "Unknown Title",
-    "CurrentAudioURL": "file:///C:\\Users\\Cody\\Desktop\\Music\\Audiosurf\\Instalok - Ivern (Shawn Mendes - Stitches PARODY).mp3",
-    "AudioLibrary": []
-  },
   "Grid": {
     "Type": 0,
     "Lines": false,
