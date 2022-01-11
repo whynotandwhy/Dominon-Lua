@@ -1905,7 +1905,7 @@ function onSave()
   {cost='M2D0P0',name='Settlers / Bustling Village',type='Action'},
   {cost='M4D0P0',name='Temple',type='Action - Gathering'},
   {cost='M4D0P0',name='Villa',type='Action'},
-  {cost='M5D0P0',name='Wild Hunt',type='Action - Gathering'},
+  {cost='M5D0P0',name='Wild Hunt',type='Action - Gathering',depend='VP'},
   {cost='M3D0P0',name='Humble Castle',type='Treasure - Victory - Castle',VP=function(t)return t.castles*1 end},
   {cost='M4D0P0',name='Crumbling Castle',type='Victory - Castle',VP=1,depend='VP'},
   {cost='M5D0P0',name='Small Castle',type='Action - Victory - Castle',VP=2},
