@@ -691,6 +691,7 @@ function onSave()
   
   function resolveRandom(card)
     local tp=getType(card.getName())
+    Use.Add(card.getName())
     local isEvent =  tp=='Event' or tp=='Landmark' or tp=='Project' or tp=='Way'
     if (not isEvent) then
       KingdomSlotCTR=KingdomSlotCTR  + 1
@@ -715,7 +716,7 @@ function onSave()
     if KingdomSlotCTR==11 then startLuaCoroutine(Global, 'setupKingdomCoroutine') return end
     ks = ref_kingdomSlots[KingdomSlotCTR]
     --take no action if card there
-    for j, v in ipairs(getObjectFromGUID(ks.zone).getObjects())do if v.tag=='Card'then KingdomSlotCTR = KingdomSlotCTR + 1 NextCard() return end end
+    for j, v in ipairs(getObjectFromGUID(ks.zone).getObjects())do if v.tag=='Card'then KingdomSlotCTR = KingdomSlotCTR + 1     Use.Add(v.getName()) NextCard() return end end
     local deck=false
   
     for i, v in ipairs(getObjectFromGUID(ref.randomizer.zone).getObjects()) do if v.tag=='Deck'then deck=v end end
@@ -1170,7 +1171,7 @@ function onSave()
               getSetup('Aqueduct')(obj)
               getSetup('Trade Route')(obj)
               getSetup('Defiled Shrine')(obj)
-              if getType(obj.getObjects()[obj.getQuantity()].getName()):find('Gathering')then tokenMake(obj,'vp')end
+              if getType(obj.getObjects()[obj.getQuantity()].name):find('Gathering')then tokenMake(obj,'vp')end
               break end end end
         for _,v in ipairs(ref_basicSlotZones)do slot(v)end
         for _,v in ipairs(ref_kingdomSlots)do slot(v.zone)end
@@ -1706,7 +1707,7 @@ function onSave()
   {cost='M5D0P0',name='Rabble',type='Action - Attack'},
   {cost='M5D0P0',name='Royal Seal',type='Treasure'},
   {cost='M4D0P0',name='Talisman',type='Treasure'},
-  {cost='M3D0P0',name='Trade Route',type='Action',setup=function(o)if getType(o.getObjects()[1].getName()):find('Victory')and not getType(o.getObjects()[1].getName()):find('Knight')then tokenMake(o,'coin')end end},
+  {cost='M3D0P0',name='Trade Route',type='Action',setup=function(o)if getType(o.getObjects()[1].name):find('Victory')and not getType(o.getObjects()[1].name):find('Knight')then tokenMake(o,'coin')end end},
   {cost='M5D0P0',name='Vault',type='Action'},
   {cost='M5D0P0',name='Venture',type='Treasure'},
   {cost='M3D0P0',name='Watchtower',type='Action - Reactopm'},
