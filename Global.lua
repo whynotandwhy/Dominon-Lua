@@ -1111,27 +1111,10 @@ function onSave()
     for _,g in pairs(ref_storageZone)do getObjectFromGUID(g).destruct()end
   
     for i,es in ipairs(ref_eventSlots)do
-      local obj,zone=getObjectFromGUID(es.guid),getObjectFromGUID(es.zone)
-      for _,o2 in ipairs(zone.getObjects())do
-        if o2.tag=='Card'then
-          if eventCount==3 then
-            o2.setPosition({o2.getPosition()[1]+3.5, o2.getPosition()[2], o2.getPosition()[3]})
-          elseif eventCount==2 then
-            o2.setPosition({o2.getPosition()[1]+7, o2.getPosition()[2], o2.getPosition()[3]})
-          elseif eventCount==1 then
-            o2.setPosition({o2.getPosition()[1]+10.5, o2.getPosition()[2], o2.getPosition()[3]})
-          end
-        end
-      end
+      local obj,zone=getObjectFromGUID(es.guid),getObjectFromGUID(es.zone)      
       if i > eventCount then
         obj.destruct()
-      elseif eventCount==3 then
-        obj.setPosition({obj.getPosition()[1]+3.5, obj.getPosition()[2], obj.getPosition()[3]})
-      elseif eventCount==2 then
-        obj.setPosition({obj.getPosition()[1]+7, obj.getPosition()[2], obj.getPosition()[3]})
-      elseif eventCount==1 then
-        obj.setPosition({obj.getPosition()[1]+10.5, obj.getPosition()[2], obj.getPosition()[3]})
-      end
+      end      
     end
   
     local temp,names={
@@ -1161,7 +1144,7 @@ function onSave()
     function tokenCoroutine()
       wait(4)
       log(Use[1])
-      if Use('TradeRoute')or Use('Tax')or Use('Landmark')or Use('Gathering')then
+     -- if Use('TradeRoute')or Use('Tax')or Use('Landmark')or Use('Gathering')then
         obeliskPiles={}
         local function slot(z)
           for __,obj in ipairs(getObjectFromGUID(z).getObjects())do
@@ -1190,7 +1173,7 @@ function onSave()
                   obeliskTarget=obeliskPiles[k].getName():sub(1,-6)
                   obeliskPiles =nil
               end break
-      end end end end
+      end end end --end
       if Use('BlackMarket')then pos=blackMarketDeck.getPosition()local g=0
         for i,card in ipairs(blackMarketDeck.getObjects())do
           if getType(card.getName()):find('Gathering')then g=g+1
