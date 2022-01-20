@@ -1,7 +1,7 @@
 {
   "SaveName": "Scripted Dominion",
-  "EpochTime": 1642699754,
-  "Date": "1/20/2022 12:29:14 PM",
+  "EpochTime": 1642715161,
+  "Date": "1/20/2022 4:46:01 PM",
   "VersionNumber": "v13.1.1",
   "GameMode": "Dominion",
   "GameType": "",
@@ -35,6 +35,17 @@
         "b": 0.5
       },
       "id": 44
+    },
+    "45": {
+      "title": "b853e8",
+      "body": "obj,n,b=nil,0,setmetatable({\nlabel='',click_function='DCoin',function_owner=self,scale={0.6,0.6,0.6},\nposition={0,0.3,0},height=300,width=2400,font_size=200},{\n__call=function(t,c,l,z)t.click_function,t.label,t.position[3]=c,l,z self.createButton(t)end})\nfunction onSave()return 0 end\nfunction onLoad(d) n=0 display()end\nfunction display()self.clearButtons()self.createButton({\nlabel=n,color={0.9,0.9,0.3},click_function='PCoin',function_owner=self,position={1.1,0.2,0},height=500,width=400,font_size=500})obj=nil end\n\nfunction PCoin()printToAll('Trade Route makes '..n..' Money!',{0.9,0.9,0.3})end\nfunction DCoin()obj.destruct()n=n+1 display()end\nfunction SCoin()obj=nil display()end\nfunction onCollisionEnter(info)\n  if not obj then\n    obj=info.collision_object\n    if obj.getName()=='Coin Token'then\nb('DCoin','Add Money to Trade Route',-0.7)\nb('SCoin','Skip Coin to Trade Route',0.7)\nend end end",
+      "color": "Grey",
+      "visibleColor": {
+        "r": 0.5,
+        "g": 0.5,
+        "b": 0.5
+      },
+      "id": 45
     }
   },
   "Grid": {
@@ -102,7 +113,7 @@
     "SkipEmpty": false,
     "DisableInteractions": false,
     "PassTurns": true,
-    "TurnColor": "White"
+    "TurnColor": "Green"
   },
   "DecalPallet": [
     {
@@ -6837,11 +6848,11 @@
       "Name": "Deck",
       "Transform": {
         "posX": 27.0000019,
-        "posY": 1.19539464,
+        "posY": 1.19539475,
         "posZ": 56.0,
-        "rotX": -1.24937145E-07,
+        "rotX": -1.37309954E-07,
         "rotY": 180.029175,
-        "rotZ": 4.578761E-09,
+        "rotZ": 4.56812721E-08,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -7813,9 +7824,9 @@
         "posX": 22.0,
         "posY": 1.12799811,
         "posZ": 56.0,
-        "rotX": 2.86304918E-08,
+        "rotX": 3.05552668E-08,
         "rotY": 90.03365,
-        "rotZ": 7.121443E-08,
+        "rotZ": 1.07158677E-07,
         "scaleX": 1.8769083,
         "scaleY": 1.0,
         "scaleZ": 1.8769083
@@ -8793,8 +8804,8 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.0599981621,
-        "g": 0.2653309,
+        "r": 0.0599981323,
+        "g": 0.265330881,
         "b": 0.5
       },
       "LayoutGroupSortIndex": 0,
@@ -8833,9 +8844,9 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.111197539,
-        "g": 0.399997562,
-        "b": 0.09599768
+        "r": 0.111197494,
+        "g": 0.399997532,
+        "b": 0.0959976539
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -8954,8 +8965,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.5,
-        "g": 0.206664354,
-        "b": 0.0599981621
+        "g": 0.206664324,
+        "b": 0.0599981323
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -8995,7 +9006,7 @@
       "ColorDiffuse": {
         "r": 0.5,
         "g": 0.49325,
-        "b": 0.09499755
+        "b": 0.09499752
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9075,8 +9086,7 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0,
-        "a": 0.25
+        "b": 1.0
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9564,8 +9574,7 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0,
-        "a": 0.25
+        "b": 1.0
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9596,7 +9605,7 @@
         "posX": 16.9670811,
         "posY": 4.54001141,
         "posZ": 15.003376,
-        "rotX": 2.05585536E-07,
+        "rotX": -2.0711758E-07,
         "rotY": 179.455048,
         "rotZ": 180.0,
         "scaleX": 0.8,
@@ -9609,7 +9618,7 @@
       "ColorDiffuse": {
         "r": 0.0,
         "g": 0.0,
-        "b": 0.0832770243
+        "b": 0.0832769945
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9664,7 +9673,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997815
+        "b": 0.171997786
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9727,7 +9736,7 @@
             "z": 0.000112795162
           },
           "Rotation": {
-            "x": -1.855449E-07,
+            "x": -1.8554492E-07,
             "y": 0.02662526,
             "z": -2.89760123E-07
           }
@@ -9741,9 +9750,9 @@
         "posX": 39.5,
         "posY": 1.075,
         "posZ": 21.0,
-        "rotX": -7.9518353E-10,
+        "rotX": -1.88478992E-07,
         "rotY": 180.009979,
-        "rotZ": 1.5629313E-08,
+        "rotZ": -9.846233E-09,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -9754,7 +9763,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997815
+        "b": 0.171997786
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9806,7 +9815,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997815
+        "b": 0.171997786
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9884,7 +9893,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997815
+        "b": 0.171997786
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -9950,7 +9959,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997815
+        "b": 0.171997786
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -10079,7 +10088,7 @@
             "z": 0.000112795162
           },
           "Rotation": {
-            "x": -1.855449E-07,
+            "x": -1.8554492E-07,
             "y": 0.02662526,
             "z": -2.89760123E-07
           }
@@ -10093,9 +10102,9 @@
         "posX": -11.5,
         "posY": 1.075,
         "posZ": -21.0,
-        "rotX": -5.27676818E-08,
+        "rotX": 1.53493588E-07,
         "rotY": 179.976349,
-        "rotZ": 3.97007334E-08,
+        "rotZ": -2.14803428E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -11188,7 +11197,7 @@
       "ColorDiffuse": {
         "r": 0.0,
         "g": 0.0,
-        "b": 0.082351245
+        "b": 0.0823512152
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -11259,6 +11268,7 @@
       },
       "LuaScript": "z={r='fd0b1d',m='21406d',p={0,1.5,22},25,29,33}\nfunction display(l)self.clearButtons()self.createButton({\n label=l,color={0,0.3,1},click_function=l:gsub(' ',''),function_owner=self,\n position={0,0.2,1},scale={0.6,0.6,0.6},height=300,width=2000,font_size=300})end\n\nfunction RevealBlackMarket()\n for _,d in pairs(getObjectFromGUID(z.r).getObjects())do\n  if d.tag=='Deck'and d.getQuantity()<4 then\n   for i=d.getQuanity(),2,-1 do z.p[1]=z[i] d.takeObject({position=z.p,index=i,flip=true})end\n   for _,c in pairs(getObjectFromGUID(z.r))do if d.tag=='Card'then\n    z.p[1]=z[2] d.setRotation({0,0,0})d.setPositionSmooth(p,false,true)\n   end end\n  elseif d.tag=='Deck'then\n   local q=d.getQuantity()+1\n   for i=1,3 do z.p[1]=z[i] d.takeObject({position=z.p,index=q-i,flip=true})end\n  elseif d.tag=='Card'then\n   z.p[1]=z[2] d.setRotation({0,0,0})d.setPositionSmooth(p,false,true)\n  end\n end\n display('Put Cards Away')\nend\n\nfunction PutCardsAway()\n for _,d in pairs(getObjectFromGUID(z[1]).getObjects())do\n  if d.tag=='Deck'or d.tag=='Card'then\n   for _,c in pairs(getObjectFromGUID(z[2]).getObjects())do\n    if c.tag=='Card'then d.putObject(c)end\n   end\n  end\n end\n display('Reveal Black Market')\nend",
       "LuaScriptState": "",
+      "XmlUI": "",
       "AttachedSnapPoints": [
         {
           "Position": {
@@ -11843,9 +11853,9 @@
         "posX": 20.3993778,
         "posY": 1.211071,
         "posZ": 37.7559853,
-        "rotX": 4.467172E-08,
+        "rotX": 3.72655471E-08,
         "rotY": 180.0,
-        "rotZ": 2.64702322E-08,
+        "rotZ": -1.09932543E-07,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -12459,9 +12469,9 @@
         "posX": 22.0,
         "posY": 1.10623026,
         "posZ": 42.5,
-        "rotX": 1.21950929E-08,
+        "rotX": 2.36505726E-09,
         "rotY": 90.0,
-        "rotZ": 9.564837E-08,
+        "rotZ": 7.396398E-08,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -12512,9 +12522,9 @@
         "posX": 16.9993858,
         "posY": 1.307352,
         "posZ": 37.7594032,
-        "rotX": 2.44419613E-08,
+        "rotX": -5.72125956E-08,
         "rotY": 180.000031,
-        "rotZ": 7.99062039E-10,
+        "rotZ": -6.847891E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -14188,9 +14198,9 @@
         "posX": 9.0,
         "posY": 1.16651046,
         "posZ": 56.0,
-        "rotX": -9.279616E-08,
+        "rotX": -1.2032136E-07,
         "rotY": 179.9893,
-        "rotZ": -4.25695461E-08,
+        "rotZ": 7.783109E-09,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -14829,9 +14839,9 @@
         "posX": -27.0,
         "posY": 1.1424402,
         "posZ": 56.0,
-        "rotX": -8.47127E-08,
+        "rotX": -1.01329512E-07,
         "rotY": 180.007523,
-        "rotZ": -2.28029542E-08,
+        "rotZ": 3.23138174E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -15203,9 +15213,9 @@
         "posX": -23.0,
         "posY": 1.1424402,
         "posZ": 56.0,
-        "rotX": -8.283022E-08,
+        "rotX": -9.5757045E-08,
         "rotY": 179.999161,
-        "rotZ": -1.91727612E-08,
+        "rotZ": 4.99310779E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -15577,9 +15587,9 @@
         "posX": 13.5993757,
         "posY": 1.2832818,
         "posZ": 37.758152,
-        "rotX": -1.75805965E-07,
+        "rotX": -1.42766643E-09,
         "rotY": 180.0,
-        "rotZ": 1.80870316E-07,
+        "rotZ": -6.462577E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -15608,34 +15618,34 @@
       "Hands": false,
       "SidewaysCard": false,
       "DeckIDs": [
-        40424,
-        40423,
-        40422,
-        40421,
-        40420,
-        40419,
-        40418,
-        40417,
-        40416,
-        40415,
-        40414,
-        40413,
-        40412,
-        40411,
-        40410,
-        40409,
-        40408,
-        40407,
-        40406,
-        40405,
-        40404,
-        40403,
-        40402,
-        40401,
-        40400
+        80624,
+        80623,
+        80622,
+        80621,
+        80620,
+        80619,
+        80618,
+        80617,
+        80616,
+        80615,
+        80614,
+        80613,
+        80612,
+        80611,
+        80610,
+        80609,
+        80608,
+        80607,
+        80606,
+        80605,
+        80604,
+        80603,
+        80602,
+        80601,
+        80600
       ],
       "CustomDeck": {
-        "404": {
+        "806": {
           "FaceURL": "http://cloud-3.steamusercontent.com/ugc/963102163508648512/8DBA2EED4A3575EDC4E2262AA4A34838FAE9C0C6/",
           "BackURL": "http://cloud-3.steamusercontent.com/ugc/482272972286453570/660AD27C5F3A9BA42322C99BE5E4BD3F0AF8F91B/",
           "NumWidth": 10,
@@ -15685,7 +15695,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40424,
+          "CardID": 80624,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -15738,7 +15748,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40423,
+          "CardID": 80623,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -15791,7 +15801,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40422,
+          "CardID": 80622,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -15844,7 +15854,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40421,
+          "CardID": 80621,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -15897,7 +15907,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40420,
+          "CardID": 80620,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -15950,7 +15960,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40419,
+          "CardID": 80619,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16003,7 +16013,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40418,
+          "CardID": 80618,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16056,7 +16066,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40417,
+          "CardID": 80617,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16109,7 +16119,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40416,
+          "CardID": 80616,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16162,7 +16172,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40415,
+          "CardID": 80615,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16215,7 +16225,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40414,
+          "CardID": 80614,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16268,7 +16278,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40413,
+          "CardID": 80613,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16321,7 +16331,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40412,
+          "CardID": 80612,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16374,7 +16384,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40411,
+          "CardID": 80611,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16427,7 +16437,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40410,
+          "CardID": 80610,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16480,7 +16490,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40409,
+          "CardID": 80609,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16533,7 +16543,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40408,
+          "CardID": 80608,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16586,7 +16596,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40407,
+          "CardID": 80607,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16639,7 +16649,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40406,
+          "CardID": 80606,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16692,7 +16702,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40405,
+          "CardID": 80605,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16745,7 +16755,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40404,
+          "CardID": 80604,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16798,7 +16808,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40403,
+          "CardID": 80603,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16851,7 +16861,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40402,
+          "CardID": 80602,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16904,7 +16914,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40401,
+          "CardID": 80601,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16957,7 +16967,7 @@
           "GridProjection": false,
           "HideWhenFaceDown": true,
           "Hands": true,
-          "CardID": 40400,
+          "CardID": 80600,
           "SidewaysCard": false,
           "CustomDeck": {
             "404": {
@@ -16983,9 +16993,9 @@
         "posX": 15.499999,
         "posY": 1.20983684,
         "posZ": 42.5,
-        "rotX": 1.67220122E-08,
+        "rotX": 3.93012245E-09,
         "rotY": 90.0001,
-        "rotZ": 1.10406688E-07,
+        "rotZ": 1.25667455E-07,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -18119,9 +18129,9 @@
         "posX": -19.9999886,
         "posY": 1.81467581,
         "posZ": 31.5010357,
-        "rotX": 7.12907649E-06,
+        "rotX": 7.124345E-06,
         "rotY": 180.000366,
-        "rotZ": -6.07848142E-06,
+        "rotZ": -6.0672337E-06,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -24537,9 +24547,9 @@
         "posX": -15.0379229,
         "posY": 1.62605417,
         "posZ": 31.5028324,
-        "rotX": -1.90047857E-07,
+        "rotX": -2.05312844E-07,
         "rotY": 180.000031,
-        "rotZ": 5.553818E-08,
+        "rotZ": 4.20578239E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -28832,12 +28842,12 @@
       "GUID": "b11add",
       "Name": "Deck",
       "Transform": {
-        "posX": -10.015811,
+        "posX": -10.0158138,
         "posY": 1.5257107,
         "posZ": 31.4967041,
-        "rotX": 0.00206326041,
+        "rotX": 0.002063526,
         "rotY": 180.000427,
-        "rotZ": 0.007886207,
+        "rotZ": 0.007885696,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -32070,12 +32080,12 @@
       "GUID": "4d0b0e",
       "Name": "Deck",
       "Transform": {
-        "posX": 5.007256,
+        "posX": 5.00725555,
         "posY": 1.38144732,
         "posZ": 31.5011444,
-        "rotX": -0.0008824085,
+        "rotX": -0.0008822568,
         "rotY": 179.987244,
-        "rotZ": 0.0015383882,
+        "rotZ": 0.00153838086,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -33727,9 +33737,9 @@
         "posX": 10.0151567,
         "posY": 1.294758,
         "posZ": 31.5003948,
-        "rotX": 2.02412175E-05,
+        "rotX": 2.02658466E-05,
         "rotY": 179.986237,
-        "rotZ": -3.56259552E-05,
+        "rotZ": -3.5755078E-05,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -34407,9 +34417,9 @@
         "posX": 15.0225248,
         "posY": 1.32364321,
         "posZ": 31.5002232,
-        "rotX": 6.658195E-08,
+        "rotX": 5.8177843E-08,
         "rotY": 179.983139,
-        "rotZ": -2.093714E-07,
+        "rotZ": -1.93757273E-07,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -35410,12 +35420,12 @@
       "GUID": "d9a2c0",
       "Name": "Deck",
       "Transform": {
-        "posX": 5.857188E-05,
+        "posX": 5.85776033E-05,
         "posY": 1.47769272,
         "posZ": 31.5000553,
-        "rotX": -1.43270924E-07,
+        "rotX": -2.03591782E-07,
         "rotY": 179.983765,
-        "rotZ": 2.561097E-07,
+        "rotZ": 2.64693654E-07,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -38108,12 +38118,12 @@
       "GUID": "475de7",
       "Name": "Deck",
       "Transform": {
-        "posX": -25.0533237,
+        "posX": -25.0533218,
         "posY": 1.31406438,
         "posZ": 31.5006065,
-        "rotX": -0.000964399,
+        "rotX": -0.000964362232,
         "rotY": 179.999954,
-        "rotZ": -0.00357457553,
+        "rotZ": -0.00357461278,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -38996,12 +39006,12 @@
       "GUID": "6ce695",
       "Name": "Deck",
       "Transform": {
-        "posX": 20.02977,
+        "posX": 20.02976,
         "posY": 1.29608357,
-        "posZ": 31.4997711,
-        "rotX": -0.005599588,
+        "posZ": 31.49977,
+        "rotX": -0.005599557,
         "rotY": 179.999878,
-        "rotZ": 0.0311645269,
+        "rotZ": 0.0311651025,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -39679,9 +39689,9 @@
         "posX": -5.007525,
         "posY": 1.294759,
         "posZ": 31.500494,
-        "rotX": -1.663122E-07,
+        "rotX": -1.84841824E-07,
         "rotY": 180.0001,
-        "rotZ": -2.52653845E-08,
+        "rotZ": -1.36518E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -40359,9 +40369,9 @@
         "posX": 3.399358,
         "posY": 1.307352,
         "posZ": 37.75527,
-        "rotX": 7.117709E-08,
+        "rotX": 4.90528826E-08,
         "rotY": 180.000031,
-        "rotZ": 1.27715367E-07,
+        "rotZ": -7.892542E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -41987,9 +41997,9 @@
         "posX": 15.5000019,
         "posY": 1.20983684,
         "posZ": 50.5,
-        "rotX": 5.02099E-08,
+        "rotX": 3.649146E-08,
         "rotY": 90.00003,
-        "rotZ": 4.22339674E-08,
+        "rotZ": -3.53227159E-09,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -43123,9 +43133,9 @@
         "posX": 15.5000019,
         "posY": 1.20983684,
         "posZ": 46.5,
-        "rotX": 1.282204E-08,
+        "rotX": 1.98247374E-08,
         "rotY": 90.00003,
-        "rotZ": -9.516595E-08,
+        "rotZ": 1.24185618E-07,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -45937,7 +45947,7 @@
         "posZ": 20.5,
         "rotX": 2.16685248E-06,
         "rotY": 180.02269,
-        "rotZ": 9.731407E-08,
+        "rotZ": 9.73140857E-08,
         "scaleX": 1.3,
         "scaleY": 1.0,
         "scaleZ": 1.3
@@ -45966,12 +45976,12 @@
       "Hands": false,
       "SidewaysCard": true,
       "DeckIDs": [
-        40300,
+        80700,
         49600,
         49700
       ],
       "CustomDeck": {
-        "403": {
+        "807": {
           "FaceURL": "http://cloud-3.steamusercontent.com/ugc/882005922656630513/ABFEAD68DDEC37A846D8F74FEC0C8D395627D136/",
           "BackURL": "http://cloud-3.steamusercontent.com/ugc/882005922656629855/1CF6ECFE16F36366D06EF820105920C92961FEBC/",
           "NumWidth": 10,
@@ -46038,7 +46048,7 @@
           "Tooltip": true,
           "GridProjection": false,
           "Hands": true,
-          "CardID": 40300,
+          "CardID": 80700,
           "SidewaysCard": true,
           "CustomDeck": {
             "403": {
@@ -46860,7 +46870,7 @@
         "posX": -16.5008259,
         "posY": 1.4091537,
         "posZ": 11.4999933,
-        "rotX": -5.50315526E-05,
+        "rotX": -5.50315672E-05,
         "rotY": 179.999786,
         "rotZ": 179.445145,
         "scaleX": 1.3,
@@ -47552,9 +47562,9 @@
         "posX": 10.1993628,
         "posY": 1.321794,
         "posZ": 37.75561,
-        "rotX": -1.051523E-09,
+        "rotX": -3.121864E-08,
         "rotY": 180.000031,
-        "rotZ": -1.21519278E-07,
+        "rotZ": 2.496202E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -49357,9 +49367,9 @@
         "posX": 6.79935,
         "posY": 1.27846766,
         "posZ": 37.7546158,
-        "rotX": -6.894394E-08,
+        "rotX": -5.172758E-08,
         "rotY": 180.0,
-        "rotZ": -9.817241E-08,
+        "rotZ": -5.252524E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -50685,9 +50695,9 @@
         "posX": 4.99999952,
         "posY": 1.214651,
         "posZ": 50.5,
-        "rotX": -2.16773728E-08,
-        "rotY": 90.00002,
-        "rotZ": 1.18453528E-07,
+        "rotX": -3.76409055E-08,
+        "rotY": 90.00003,
+        "rotZ": 1.37793847E-07,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -51854,9 +51864,9 @@
         "posX": 5.0,
         "posY": 1.17613864,
         "posZ": 46.5,
-        "rotX": -8.739476E-08,
+        "rotX": -6.93075464E-08,
         "rotY": 90.0000153,
-        "rotZ": 2.14153289E-07,
+        "rotZ": 9.51926E-08,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -52612,9 +52622,9 @@
         "posX": -7.0,
         "posY": 1.16169643,
         "posZ": 56.0,
-        "rotX": -9.70546E-08,
+        "rotX": -1.26263387E-07,
         "rotY": 180.0069,
-        "rotZ": 1.88456362E-08,
+        "rotZ": 4.83332663E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -53198,9 +53208,9 @@
         "posX": 5.0,
         "posY": 1.16169643,
         "posZ": 56.0,
-        "rotX": -4.47526354E-08,
+        "rotX": -1.05044435E-07,
         "rotY": 179.9978,
-        "rotZ": 1.66241012E-08,
+        "rotZ": 4.31349818E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -53784,9 +53794,9 @@
         "posX": -3.0,
         "posY": 1.16169643,
         "posZ": 56.0,
-        "rotX": -4.776373E-08,
+        "rotX": -5.998524E-08,
         "rotY": 180.0008,
-        "rotZ": 3.10095749E-09,
+        "rotZ": 4.98309554E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -54370,9 +54380,9 @@
         "posX": -11.0,
         "posY": 1.16169643,
         "posZ": 56.0,
-        "rotX": -5.39563629E-08,
+        "rotX": -1.88402424E-07,
         "rotY": 179.999619,
-        "rotZ": 8.477801E-09,
+        "rotZ": -6.562541E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -54956,9 +54966,9 @@
         "posX": 1.0,
         "posY": 1.16169643,
         "posZ": 56.0,
-        "rotX": -1.56739915E-07,
+        "rotX": -1.25683087E-07,
         "rotY": 180.001556,
-        "rotZ": 7.31920764E-08,
+        "rotZ": 1.08565516E-07,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -55542,9 +55552,9 @@
         "posX": -15.0,
         "posY": 1.17132449,
         "posZ": 56.0,
-        "rotX": -1.40513421E-07,
+        "rotX": -1.40232444E-07,
         "rotY": 180.0,
-        "rotZ": -1.43911993E-08,
+        "rotZ": 1.53797561E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -56242,9 +56252,9 @@
         "posX": 13.0,
         "posY": 1.18095255,
         "posZ": 56.0,
-        "rotX": -1.54607179E-07,
+        "rotX": -5.84126951E-08,
         "rotY": 180.025238,
-        "rotZ": 3.64860036E-08,
+        "rotZ": -3.242372E-08,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -57272,9 +57282,9 @@
         "posX": 4.99999952,
         "posY": 1.20983684,
         "posZ": 42.5,
-        "rotX": -1.21010375E-08,
+        "rotX": 1.67756031E-08,
         "rotY": 90.00003,
-        "rotZ": 1.10833213E-07,
+        "rotZ": 5.770447E-08,
         "scaleX": 1.88,
         "scaleY": 1.0,
         "scaleZ": 1.88
@@ -58405,12 +58415,12 @@
       "GUID": "3c269b",
       "Name": "Deck",
       "Transform": {
-        "posX": -0.000114411305,
+        "posX": -0.000114381255,
         "posY": 1.2255131,
         "posZ": 37.7487946,
-        "rotX": -2.112613E-08,
+        "rotX": 5.086134E-08,
         "rotY": 180.0,
-        "rotZ": -1.6026938E-08,
+        "rotZ": -1.79084791E-09,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -59140,9 +59150,9 @@
         "posX": -10.2000055,
         "posY": 1.2255131,
         "posZ": 37.74882,
-        "rotX": -4.42776127E-08,
+        "rotX": 6.065798E-08,
         "rotY": 180.0,
-        "rotZ": 2.7695128E-08,
+        "rotZ": -5.296772E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -60198,9 +60208,9 @@
         "posX": -3.42687321,
         "posY": 1.33142221,
         "posZ": 37.7499847,
-        "rotX": -1.13397673E-08,
+        "rotX": 4.2255234E-08,
         "rotY": 180.000015,
-        "rotZ": 6.2075034E-09,
+        "rotZ": 1.11525985E-07,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -62085,9 +62095,9 @@
         "posX": -3.5,
         "posY": 1.12799811,
         "posZ": 48.0,
-        "rotX": -7.1809886E-08,
+        "rotX": -8.891147E-08,
         "rotY": 180.0,
-        "rotZ": -5.53711033E-08,
+        "rotZ": -4.331125E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -63131,12 +63141,12 @@
       "GUID": "2adf43",
       "Name": "Deck",
       "Transform": {
-        "posX": 25.0415211,
+        "posX": 25.04152,
         "posY": 1.47775745,
         "posZ": 31.4996033,
-        "rotX": -0.00160924788,
-        "rotY": 179.99234,
-        "rotZ": 0.00418686029,
+        "rotX": -0.00160923391,
+        "rotY": 179.992355,
+        "rotZ": 0.004186926,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -65843,9 +65853,9 @@
         "posX": -19.0000019,
         "posY": 1.16651046,
         "posZ": 56.0,
-        "rotX": -1.54495623E-07,
+        "rotX": -3.90728339E-08,
         "rotY": 180.0,
-        "rotZ": 1.36042473E-07,
+        "rotZ": -5.17468557E-08,
         "scaleX": 1.87763953,
         "scaleY": 1.0,
         "scaleZ": 1.87763953
@@ -66483,9 +66493,9 @@
         "posX": -6.800007,
         "posY": 1.28809583,
         "posZ": 37.7482452,
-        "rotX": 2.059786E-08,
+        "rotX": 2.56177124E-08,
         "rotY": 180.0,
-        "rotZ": -1.10066431E-07,
+        "rotZ": -1.76861491E-07,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -67891,9 +67901,9 @@
         "posX": -27.2000065,
         "posY": 1.28809583,
         "posZ": 37.7482452,
-        "rotX": 8.376923E-09,
+        "rotX": -3.787148E-09,
         "rotY": 180.0,
-        "rotZ": -2.4409486E-08,
+        "rotZ": 4.53432278E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -69325,9 +69335,9 @@
         "posX": -13.6000061,
         "posY": 1.2832818,
         "posZ": 37.7482872,
-        "rotX": -1.19120529E-07,
+        "rotX": -1.22501788E-07,
         "rotY": 180.0,
-        "rotZ": -6.591673E-08,
+        "rotZ": -4.72652921E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -70682,9 +70692,9 @@
         "posX": -23.800005,
         "posY": 1.28809583,
         "posZ": 37.7482452,
-        "rotX": 3.41774928E-08,
+        "rotX": 1.464116E-08,
         "rotY": 180.0,
-        "rotZ": 7.61658754E-08,
+        "rotZ": 1.09054646E-07,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -72116,9 +72126,9 @@
         "posX": -17.0000019,
         "posY": 1.22069907,
         "posZ": 37.7488632,
-        "rotX": -4.798562E-08,
+        "rotX": -6.746042E-08,
         "rotY": 180.0,
-        "rotZ": 5.48579351E-08,
+        "rotZ": 1.93678478E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -72796,9 +72806,9 @@
         "posX": -22.300005,
         "posY": 1.212795,
         "posZ": 8.499992,
-        "rotX": -4.949178E-08,
+        "rotX": -4.949179E-08,
         "rotY": 180.025177,
-        "rotZ": -2.768658E-08,
+        "rotZ": -2.76865855E-08,
         "scaleX": 1.3,
         "scaleY": 1.0,
         "scaleZ": 1.3
@@ -73882,7 +73892,7 @@
         "posZ": 8.500042,
         "rotX": -0.000173583045,
         "rotY": 180.0242,
-        "rotZ": 0.000401263329,
+        "rotZ": 0.0004012634,
         "scaleX": 1.3,
         "scaleY": 1.0,
         "scaleZ": 1.3
@@ -79142,9 +79152,9 @@
         "posX": -21.3055439,
         "posY": 1.204134,
         "posZ": 13.4599218,
-        "rotX": -8.084784E-09,
+        "rotX": -8.084787E-09,
         "rotY": 180.084274,
-        "rotZ": 2.42043114E-08,
+        "rotZ": 2.42043043E-08,
         "scaleX": 1.3,
         "scaleY": 1.0,
         "scaleZ": 1.3
@@ -79820,9 +79830,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -29.0,
-        "rotX": -2.09381554E-07,
+        "rotX": 3.33892444E-07,
         "rotY": 180.0,
-        "rotZ": -1.17080226E-07,
+        "rotZ": 8.024282E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -79832,8 +79842,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -79872,9 +79882,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -30.5,
-        "rotX": 1.63377877E-07,
+        "rotX": 1.795962E-07,
         "rotY": 180.0,
-        "rotZ": -1.24286728E-07,
+        "rotZ": 6.44279936E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -79884,8 +79894,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -79924,9 +79934,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -27.5,
-        "rotX": -1.07013946E-07,
+        "rotX": -2.30787673E-08,
         "rotY": 180.0,
-        "rotZ": -1.622825E-08,
+        "rotZ": 3.96537E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -79936,8 +79946,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -79976,9 +79986,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -26.0,
-        "rotX": 6.347515E-08,
+        "rotX": 1.30661931E-07,
         "rotY": 180.0,
-        "rotZ": -1.19427227E-07,
+        "rotZ": -2.36626221E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -79988,8 +79998,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80028,9 +80038,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -24.5,
-        "rotX": -6.17568645E-08,
+        "rotX": 7.738374E-08,
         "rotY": 179.997391,
-        "rotZ": -3.64724968E-07,
+        "rotZ": -1.39503456E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80040,8 +80050,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80077,12 +80087,12 @@
       "GUID": "5b6fe5",
       "Name": "BlockSquare",
       "Transform": {
-        "posX": 55.000042,
-        "posY": 1.225,
-        "posZ": -21.9997578,
-        "rotX": -1.53954232E-07,
-        "rotY": 179.99884,
-        "rotZ": -2.68310515E-07,
+        "posX": 55.0000572,
+        "posY": 1.22500014,
+        "posZ": -21.99977,
+        "rotX": -9.273255E-06,
+        "rotY": 179.9991,
+        "rotZ": -1.5050523E-05,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -80092,8 +80102,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80110,7 +80120,8 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2='Project Ownership','White',nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "5feb8d",
@@ -80119,9 +80130,9 @@
         "posX": 55.0,
         "posY": 1.225,
         "posZ": -20.0,
-        "rotX": -4.273108E-07,
-        "rotY": 1.24105509E-06,
-        "rotZ": 4.46053576E-07,
+        "rotX": -2.82022967E-07,
+        "rotY": 1.21212054E-06,
+        "rotZ": -1.18096253E-08,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -80131,8 +80142,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80159,9 +80170,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -17.5,
-        "rotX": -1.61262875E-07,
+        "rotX": -8.929429E-08,
         "rotY": 180.000061,
-        "rotZ": 1.07397781E-07,
+        "rotZ": 9.225431E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80171,8 +80182,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80211,9 +80222,9 @@
         "posX": 39.5,
         "posY": 1.075,
         "posZ": -21.0,
-        "rotX": 1.09357188E-07,
+        "rotX": 1.306117E-08,
         "rotY": 180.0,
-        "rotZ": 1.536876E-08,
+        "rotZ": 2.14666063E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -80223,8 +80234,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80263,9 +80274,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -16.0,
-        "rotX": -3.662594E-08,
+        "rotX": -1.86156711E-07,
         "rotY": 180.0,
-        "rotZ": 1.17813713E-07,
+        "rotZ": 2.549839E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80275,8 +80286,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80315,9 +80326,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -14.5,
-        "rotX": -4.30704E-08,
+        "rotX": 6.224961E-08,
         "rotY": 180.0,
-        "rotZ": -4.88469567E-08,
+        "rotZ": -1.28933792E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80327,8 +80338,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80367,9 +80378,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -13.0,
-        "rotX": -1.90484979E-08,
+        "rotX": 2.144405E-07,
         "rotY": 180.0,
-        "rotZ": -1.59932156E-07,
+        "rotZ": -9.192894E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80379,8 +80390,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80431,8 +80442,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80497,8 +80508,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80561,7 +80572,7 @@
             "z": 0.000112795162
           },
           "Rotation": {
-            "x": -1.85544934E-07,
+            "x": -1.85544948E-07,
             "y": 0.02662526,
             "z": -2.89760123E-07
           }
@@ -80575,9 +80586,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": -11.5,
-        "rotX": 2.13904734E-08,
+        "rotX": -9.52172E-08,
         "rotY": 180.0,
-        "rotZ": 1.13830694E-07,
+        "rotZ": 1.64769929E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80587,8 +80598,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80639,8 +80650,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80717,8 +80728,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919987,
-        "b": 0.1129987
+        "g": 0.391998678,
+        "b": 0.112998672
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80771,9 +80782,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -29.0,
-        "rotX": -1.25110091E-07,
+        "rotX": 1.80436444E-07,
         "rotY": 179.999832,
-        "rotZ": -6.053298E-09,
+        "rotZ": 4.588561E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80783,8 +80794,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80823,9 +80834,9 @@
         "posX": 27.00066,
         "posY": 1.075,
         "posZ": -30.4928818,
-        "rotX": 1.03250592E-07,
+        "rotX": -1.36495544E-07,
         "rotY": 180.014374,
-        "rotZ": 4.567813E-07,
+        "rotZ": -5.21481631E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80835,8 +80846,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80875,9 +80886,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -27.5,
-        "rotX": 1.07209161E-07,
+        "rotX": -2.88111153E-08,
         "rotY": 180.0,
-        "rotZ": -2.15719041E-07,
+        "rotZ": 6.786707E-09,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80887,8 +80898,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80927,9 +80938,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -26.0,
-        "rotX": -6.341593E-08,
+        "rotX": 7.94114641E-08,
         "rotY": 179.999832,
-        "rotZ": 1.01984938E-07,
+        "rotZ": 4.51180826E-09,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80939,8 +80950,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -80979,9 +80990,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -24.5,
-        "rotX": 2.79470271E-07,
+        "rotX": -2.783387E-07,
         "rotY": 179.997391,
-        "rotZ": -4.27201774E-10,
+        "rotZ": 8.9804395E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -80991,8 +81002,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81030,10 +81041,10 @@
       "Transform": {
         "posX": 26.99989,
         "posY": 1.225,
-        "posZ": -21.9997883,
-        "rotX": -4.69577E-07,
-        "rotY": 179.999588,
-        "rotZ": 4.602968E-07,
+        "posZ": -21.999794,
+        "rotX": 4.85140461E-08,
+        "rotY": 179.999786,
+        "rotZ": 8.562694E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -81043,8 +81054,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81061,7 +81072,8 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2='Project Ownership','White',nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "7b08d1",
@@ -81070,9 +81082,9 @@
         "posX": 27.0,
         "posY": 1.225,
         "posZ": -20.0,
-        "rotX": -4.57431867E-07,
-        "rotY": 1.13203146E-06,
-        "rotZ": 4.7511665E-07,
+        "rotX": -4.1733918E-07,
+        "rotY": 1.16714125E-06,
+        "rotZ": 5.359911E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -81082,8 +81094,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81110,9 +81122,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -17.5,
-        "rotX": 5.221287E-08,
+        "rotX": 4.274664E-08,
         "rotY": 179.999878,
-        "rotZ": 6.347664E-08,
+        "rotZ": 7.963719E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81122,8 +81134,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81162,9 +81174,9 @@
         "posX": 11.5,
         "posY": 1.075,
         "posZ": -21.0,
-        "rotX": -5.10048643E-08,
+        "rotX": -5.18983825E-08,
         "rotY": 180.0,
-        "rotZ": 3.92850836E-08,
+        "rotZ": 1.16169376E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -81174,8 +81186,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81214,9 +81226,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -16.0,
-        "rotX": -1.37070771E-07,
+        "rotX": 1.00733018E-07,
         "rotY": 180.0,
-        "rotZ": -2.953536E-09,
+        "rotZ": -3.63921124E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81226,8 +81238,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81266,9 +81278,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -14.5,
-        "rotX": -8.61255955E-08,
+        "rotX": 1.187208E-08,
         "rotY": 179.999863,
-        "rotZ": -7.886096E-08,
+        "rotZ": -1.73281478E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81278,8 +81290,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81318,9 +81330,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -13.0,
-        "rotX": 1.958227E-07,
+        "rotX": 1.60623159E-07,
         "rotY": 180.0,
-        "rotZ": 9.301973E-09,
+        "rotZ": 1.87940785E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81330,8 +81342,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81382,8 +81394,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81448,8 +81460,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81512,7 +81524,7 @@
             "z": 0.000112795162
           },
           "Rotation": {
-            "x": -1.85544934E-07,
+            "x": -1.85544948E-07,
             "y": 0.02662526,
             "z": -2.89760123E-07
           }
@@ -81526,9 +81538,9 @@
         "posX": 27.0,
         "posY": 1.075,
         "posZ": -11.5,
-        "rotX": -1.686868E-07,
+        "rotX": -1.83593727E-07,
         "rotY": 180.0,
-        "rotZ": 1.468708E-07,
+        "rotZ": 1.37164818E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81538,8 +81550,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81590,8 +81602,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81668,8 +81680,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999875,
-        "b": 0.09399872
+        "g": 0.09999872,
+        "b": 0.09399869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81722,9 +81734,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 17.5,
-        "rotX": -9.49806136E-08,
+        "rotX": -5.351791E-08,
         "rotY": 179.997543,
-        "rotZ": 7.391931E-08,
+        "rotZ": 3.463456E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81735,7 +81747,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81771,12 +81783,12 @@
       "GUID": "ea9d7c",
       "Name": "BlockSquare",
       "Transform": {
-        "posX": 55.00006,
-        "posY": 1.225,
-        "posZ": 20.0001431,
-        "rotX": -4.65949938E-07,
-        "rotY": 179.99884,
-        "rotZ": 5.12606846E-08,
+        "posX": 55.00008,
+        "posY": 1.22500014,
+        "posZ": 20.0001278,
+        "rotX": 1.37349616E-05,
+        "rotY": 179.998764,
+        "rotZ": -1.74366724E-05,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -81787,7 +81799,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997756
+        "b": 0.171997726
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81804,7 +81816,8 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2='Project Ownership','White',nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "9b0abc",
@@ -81813,9 +81826,9 @@
         "posX": 55.0,
         "posY": 1.225,
         "posZ": 22.0,
-        "rotX": -2.29528808E-07,
-        "rotY": 5.02427647E-05,
-        "rotZ": 4.902025E-07,
+        "rotX": -1.13314258E-07,
+        "rotY": 5.029921E-05,
+        "rotZ": -2.96201E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -81826,7 +81839,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997756
+        "b": 0.171997726
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81853,9 +81866,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 16.0,
-        "rotX": -7.28602458E-08,
+        "rotX": -2.06370174E-08,
         "rotY": 179.999969,
-        "rotZ": -8.321125E-08,
+        "rotZ": -2.5083682E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81866,7 +81879,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81905,9 +81918,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 30.5,
-        "rotX": 1.526406E-08,
+        "rotX": -1.85536365E-07,
         "rotY": 180.000168,
-        "rotZ": 9.54694E-08,
+        "rotZ": -9.0445E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81918,7 +81931,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -81957,9 +81970,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 26.0,
-        "rotX": -7.39993737E-08,
+        "rotX": 1.14849485E-07,
         "rotY": 179.999985,
-        "rotZ": -6.479657E-08,
+        "rotZ": -2.34803E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -81970,7 +81983,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82009,9 +82022,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 24.5,
-        "rotX": 2.57259757E-07,
+        "rotX": 2.11479456E-08,
         "rotY": 179.999374,
-        "rotZ": -9.177104E-08,
+        "rotZ": -4.35133174E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82022,7 +82035,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82061,9 +82074,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 29.0,
-        "rotX": 2.92449336E-08,
+        "rotX": 6.665877E-08,
         "rotY": 180.0,
-        "rotZ": -2.029928E-08,
+        "rotZ": -1.11826552E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82074,7 +82087,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82113,9 +82126,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 27.5,
-        "rotX": -1.693854E-07,
+        "rotX": -1.63564966E-08,
         "rotY": 180.000137,
-        "rotZ": 3.68844269E-07,
+        "rotZ": -3.66900075E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82126,7 +82139,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82165,9 +82178,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 14.5,
-        "rotX": -1.56253492E-07,
+        "rotX": 1.56191362E-08,
         "rotY": 180.000061,
-        "rotZ": -3.16839781E-08,
+        "rotZ": -6.984045E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82178,7 +82191,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82217,9 +82230,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 13.0,
-        "rotX": 6.89868429E-09,
+        "rotX": -3.57713873E-07,
         "rotY": 179.9995,
-        "rotZ": -3.775052E-08,
+        "rotZ": 1.10322425E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82230,7 +82243,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82269,9 +82282,9 @@
         "posX": 55.0,
         "posY": 1.075,
         "posZ": 11.5,
-        "rotX": -8.78013E-08,
+        "rotX": 2.53672052E-08,
         "rotY": 180.000122,
-        "rotZ": -3.16460924E-09,
+        "rotZ": 5.5010748E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82282,7 +82295,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997786
+        "b": 0.171997756
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82321,9 +82334,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -24.5,
-        "rotX": 3.586526E-08,
+        "rotX": 1.2756783E-07,
         "rotY": 179.997391,
-        "rotZ": 1.58588875E-08,
+        "rotZ": -3.77279719E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82332,9 +82345,9 @@
       "Description": "When you would draw a card, instead lose this.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82370,12 +82383,12 @@
       "GUID": "af9d5f",
       "Name": "BlockSquare",
       "Transform": {
-        "posX": -55.00017,
+        "posX": -55.0001564,
         "posY": 1.225,
-        "posZ": -21.9998436,
-        "rotX": -3.54525639E-07,
+        "posZ": -21.9998569,
+        "rotX": -5.061131E-07,
         "rotY": 179.998856,
-        "rotZ": -1.22725382E-07,
+        "rotZ": -2.79195376E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -82384,9 +82397,9 @@
       "Description": "Green",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82403,7 +82416,8 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2='Project Ownership','White',nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "2b1cc4",
@@ -82412,9 +82426,9 @@
         "posX": -55.0,
         "posY": 1.225,
         "posZ": -20.0,
-        "rotX": -5.10899E-07,
-        "rotY": 1.35745609E-06,
-        "rotZ": 4.316115E-07,
+        "rotX": -3.701364E-07,
+        "rotY": 1.39236852E-06,
+        "rotZ": 2.54414886E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -82423,9 +82437,9 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82452,9 +82466,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -26.0,
-        "rotX": 1.68110546E-07,
+        "rotX": 1.6975936E-07,
         "rotY": 180.0,
-        "rotZ": -4.887859E-08,
+        "rotZ": -1.09936025E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82463,9 +82477,9 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Action.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82504,9 +82518,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -11.5000486,
-        "rotX": -1.41591471E-07,
+        "rotX": 1.19543637E-08,
         "rotY": 180.0039,
-        "rotZ": -2.8585643E-07,
+        "rotZ": 2.400577E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82515,9 +82529,9 @@
       "Description": "When you would accumulate money, subtract one from the total, then lose this.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82556,9 +82570,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -16.0,
-        "rotX": 9.621171E-08,
+        "rotX": -1.09420064E-07,
         "rotY": 180.0,
-        "rotZ": 1.436991E-07,
+        "rotZ": 8.35881764E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82567,9 +82581,9 @@
       "Description": "Place this onto a non-Victory Action card from the supply costing up to 4, and set both aside.\nAll of your Estates gain the abilities and types of the card set aside.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82608,9 +82622,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -17.5,
-        "rotX": 5.581965E-09,
+        "rotX": 3.577902E-08,
         "rotY": 179.99939,
-        "rotZ": 1.291666E-07,
+        "rotZ": 2.885536E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82619,9 +82633,9 @@
       "Description": "This gets placed on an Action supply pile.\nCards from that pile cost 2 less during your turns, but not less than 0.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82660,9 +82674,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -13.0,
-        "rotX": 5.44830172E-08,
+        "rotX": -1.54615691E-07,
         "rotY": 180.0,
-        "rotZ": 7.962976E-08,
+        "rotZ": 1.12348225E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82671,9 +82685,9 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Buy.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82712,9 +82726,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -14.5,
-        "rotX": -9.256568E-09,
+        "rotX": -1.96228413E-07,
         "rotY": 180.0,
-        "rotZ": 2.777103E-08,
+        "rotZ": 7.673036E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82723,9 +82737,9 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Card.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82764,9 +82778,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -27.5,
-        "rotX": -7.283532E-08,
+        "rotX": -5.215859E-08,
         "rotY": 180.0,
-        "rotZ": 1.18534111E-07,
+        "rotZ": 3.45198465E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82775,9 +82789,9 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Coin.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82816,9 +82830,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -29.0,
-        "rotX": 7.263068E-08,
+        "rotX": -1.30845478E-07,
         "rotY": 179.999359,
-        "rotZ": -2.06459319E-07,
+        "rotZ": -1.12707433E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82827,9 +82841,9 @@
       "Description": "When the owner of this token buys a card from the pile this was placed on, they may trash a card from their hand.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82868,9 +82882,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": -30.5,
-        "rotX": 2.469297E-07,
+        "rotX": -3.006784E-07,
         "rotY": 180.0,
-        "rotZ": 1.01234988E-07,
+        "rotZ": 2.07711309E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -82879,9 +82893,9 @@
       "Description": "This starts face up.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82931,9 +82945,9 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -82996,7 +83010,7 @@
             "z": 0.000112795162
           },
           "Rotation": {
-            "x": -1.85544934E-07,
+            "x": -1.85544948E-07,
             "y": 0.02662526,
             "z": -2.89760123E-07
           }
@@ -83021,9 +83035,9 @@
       "Description": "All cards on this mat are returned to your deck at the end of the game.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -83087,9 +83101,9 @@
       "Description": "All cards on this mat are returned to your deck at the end of the game.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -83153,9 +83167,9 @@
       "Description": "When you gain a card, you may discard all other copies of it from here.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -83220,9 +83234,9 @@
         "posX": -39.5,
         "posY": 1.075,
         "posZ": -21.0,
-        "rotX": 6.436924E-08,
+        "rotX": 1.463982E-07,
         "rotY": 179.976349,
-        "rotZ": 3.29967129E-08,
+        "rotZ": -1.794799E-07,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -83231,9 +83245,9 @@
       "Description": "This token is just a helpful reminder of what cards are set aside!",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.19199878,
+        "r": 0.19199875,
         "g": 0.701,
-        "b": 0.167998761
+        "b": 0.167998731
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -83272,9 +83286,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -29.0,
-        "rotX": 1.84523632E-08,
+        "rotX": -1.25238969E-07,
         "rotY": 179.999847,
-        "rotZ": -1.19016768E-07,
+        "rotZ": 3.551508E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83324,9 +83338,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -30.5,
-        "rotX": -2.77727224E-07,
+        "rotX": -1.80702369E-08,
         "rotY": 180.0144,
-        "rotZ": 4.662121E-08,
+        "rotZ": -7.690127E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83376,9 +83390,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -27.5,
-        "rotX": 2.13321542E-07,
+        "rotX": 2.2710692E-08,
         "rotY": 180.0,
-        "rotZ": -1.75198824E-08,
+        "rotZ": 7.76414737E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83428,9 +83442,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -26.0,
-        "rotX": 2.729522E-07,
+        "rotX": 8.45341148E-08,
         "rotY": 179.999847,
-        "rotZ": -3.61983979E-07,
+        "rotZ": -1.1041088E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83480,9 +83494,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -24.5,
-        "rotX": -7.144558E-08,
+        "rotX": -3.79466485E-07,
         "rotY": 179.997391,
-        "rotZ": -3.7718312E-08,
+        "rotZ": 7.373312E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83529,12 +83543,12 @@
       "GUID": "a64f4e",
       "Name": "BlockSquare",
       "Transform": {
-        "posX": -27.000124,
+        "posX": -27.0001087,
         "posY": 1.225,
-        "posZ": -21.999815,
-        "rotX": -4.50338348E-07,
-        "rotY": 179.999588,
-        "rotZ": -4.3482828E-07,
+        "posZ": -21.9998283,
+        "rotX": 1.13969875E-07,
+        "rotY": 179.9986,
+        "rotZ": -6.704596E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -83562,7 +83576,8 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2='Project Ownership','White',nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "5bc0fa",
@@ -83571,9 +83586,9 @@
         "posX": -27.0,
         "posY": 1.225,
         "posZ": -20.0,
-        "rotX": -3.69796481E-07,
-        "rotY": 1.12975476E-06,
-        "rotZ": 3.19143481E-07,
+        "rotX": -4.29161E-07,
+        "rotY": 1.17375146E-06,
+        "rotZ": 4.21235427E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -83611,9 +83626,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -17.5,
-        "rotX": -7.819421E-08,
+        "rotX": -2.62309747E-08,
         "rotY": 179.999878,
-        "rotZ": 1.68080049E-07,
+        "rotZ": -8.00247264E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83663,9 +83678,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -16.0,
-        "rotX": 2.23792881E-07,
+        "rotX": 4.83295644E-08,
         "rotY": 180.0,
-        "rotZ": -2.815189E-07,
+        "rotZ": -7.23665252E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83715,9 +83730,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -14.5,
-        "rotX": -1.90872811E-07,
+        "rotX": 1.02800264E-07,
         "rotY": 179.999863,
-        "rotZ": -1.2951449E-07,
+        "rotZ": -3.018106E-09,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83767,9 +83782,9 @@
         "posX": -27.0,
         "posY": 1.075,
         "posZ": -13.0,
-        "rotX": -5.2293057E-08,
+        "rotX": -1.6416E-07,
         "rotY": 180.0,
-        "rotZ": 1.00657715E-07,
+        "rotZ": -1.0071771E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83819,9 +83834,9 @@
         "posX": -26.999506,
         "posY": 1.075,
         "posZ": -11.4917288,
-        "rotX": -6.961883E-08,
+        "rotX": -2.59300919E-07,
         "rotY": 180.055359,
-        "rotZ": 1.64232958E-07,
+        "rotZ": -1.42092276E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -83882,7 +83897,7 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997684,
+        "r": 0.117997654,
         "g": 0.53,
         "b": 1.0
       },
@@ -83947,7 +83962,7 @@
             "z": 0.000112795162
           },
           "Rotation": {
-            "x": -1.85544934E-07,
+            "x": -1.85544948E-07,
             "y": 0.02662526,
             "z": -2.89760123E-07
           }
@@ -83961,9 +83976,9 @@
         "posX": -39.5,
         "posY": 1.075,
         "posZ": 21.0,
-        "rotX": 1.38113052E-07,
+        "rotX": -1.66911278E-07,
         "rotY": 179.976349,
-        "rotZ": 3.39371766E-08,
+        "rotZ": 3.78873253E-08,
         "scaleX": 1.0,
         "scaleY": 1.0,
         "scaleZ": 1.0
@@ -83972,7 +83987,7 @@
       "Description": "This token is just a helpful reminder of what cards are set aside!",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997684,
+        "r": 0.117997654,
         "g": 0.53,
         "b": 1.0
       },
@@ -84024,7 +84039,7 @@
       "Description": "All cards on this mat are returned to your deck at the end of the game.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997684,
+        "r": 0.117997654,
         "g": 0.53,
         "b": 1.0
       },
@@ -84090,7 +84105,7 @@
       "Description": "All cards on this mat are returned to your deck at the end of the game.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997684,
+        "r": 0.117997654,
         "g": 0.53,
         "b": 1.0
       },
@@ -84156,7 +84171,7 @@
       "Description": "When you gain a card, you may discard all other copies of it from here.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997684,
+        "r": 0.117997654,
         "g": 0.53,
         "b": 1.0
       },
@@ -84223,9 +84238,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": 29.0,
-        "rotX": 1.75039659E-07,
+        "rotX": 4.28763052E-08,
         "rotY": 180.000092,
-        "rotZ": -8.517544E-08,
+        "rotZ": 3.156532E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84234,7 +84249,7 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Buy.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84275,9 +84290,9 @@
         "posX": -55.0,
         "posY": 1.075,
         "posZ": 30.5,
-        "rotX": -8.293102E-08,
+        "rotX": -2.70496159E-08,
         "rotY": 180.035461,
-        "rotZ": -2.940189E-08,
+        "rotZ": 3.436005E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84286,7 +84301,7 @@
       "Description": "When you would accumulate money, subtract one from the total, then lose this.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84324,12 +84339,12 @@
       "GUID": "21eaa1",
       "Name": "BlockSquare",
       "Transform": {
-        "posX": -55.0001259,
+        "posX": -55.00013,
         "posY": 1.225,
-        "posZ": 20.0000782,
-        "rotX": -7.099853E-07,
-        "rotY": 179.998856,
-        "rotZ": -6.26738768E-07,
+        "posZ": 20.0000744,
+        "rotX": -4.027759E-07,
+        "rotY": 179.999847,
+        "rotZ": -6.115577E-08,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -84338,7 +84353,7 @@
       "Description": "Blue",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84357,18 +84372,19 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2='Project Ownership','White',nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "b76451",
       "Name": "BlockSquare",
       "Transform": {
         "posX": -55.0,
-        "posY": 1.22500014,
+        "posY": 1.225,
         "posZ": 21.5,
-        "rotX": 2.10585878E-08,
-        "rotY": 0.0244569145,
-        "rotZ": 1.42637958E-07,
+        "rotX": -7.37179562E-07,
+        "rotY": 0.0244569816,
+        "rotZ": 2.50233683E-07,
         "scaleX": 0.9,
         "scaleY": 0.3,
         "scaleZ": 0.9
@@ -84377,7 +84393,7 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84406,9 +84422,9 @@
         "posX": -55.00721,
         "posY": 1.075,
         "posZ": 24.500185,
-        "rotX": -4.52963045E-09,
+        "rotX": 1.71244068E-08,
         "rotY": 180.059723,
-        "rotZ": 8.300625E-08,
+        "rotZ": 2.06640792E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84417,7 +84433,7 @@
       "Description": "This gets placed on an Action supply pile.\nCards from that pile cost 2 less during your turns, but not less than 0.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84458,9 +84474,9 @@
         "posX": -55.00709,
         "posY": 1.075,
         "posZ": 26.00019,
-        "rotX": -1.63686124E-07,
+        "rotX": 1.15041736E-07,
         "rotY": 180.026917,
-        "rotZ": -2.50784154E-07,
+        "rotZ": 1.38379363E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84469,7 +84485,7 @@
       "Description": "Place this onto a non-Victory Action card from the supply costing up to 4, and set both aside.\nAll of your Estates gain the abilities and types of the card set aside.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84510,9 +84526,9 @@
         "posX": -54.9999161,
         "posY": 1.075,
         "posZ": 27.4941959,
-        "rotX": -1.22637232E-07,
+        "rotX": -7.494728E-08,
         "rotY": 179.974625,
-        "rotZ": 2.21883667E-07,
+        "rotZ": 9.02680739E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84521,7 +84537,7 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Card.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84562,9 +84578,9 @@
         "posX": -55.0071678,
         "posY": 1.075,
         "posZ": 14.5001659,
-        "rotX": 7.612107E-08,
+        "rotX": -2.400806E-08,
         "rotY": 180.034271,
-        "rotZ": -7.734822E-08,
+        "rotZ": -1.20181667E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84573,7 +84589,7 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Coin.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84614,9 +84630,9 @@
         "posX": -55.007103,
         "posY": 1.075,
         "posZ": 15.9998045,
-        "rotX": -1.0054562E-07,
+        "rotX": 1.04577126E-07,
         "rotY": 179.976456,
-        "rotZ": 1.66929883E-08,
+        "rotZ": 1.73838416E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84625,7 +84641,7 @@
       "Description": "This gets placed on an Action supply pile.\nWhen you play a card from that pile, you first get +1 Action.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84666,9 +84682,9 @@
         "posX": -55.00717,
         "posY": 1.075,
         "posZ": 17.5001621,
-        "rotX": 1.67344787E-08,
+        "rotX": 1.19516528E-07,
         "rotY": 180.031723,
-        "rotZ": 1.338339E-07,
+        "rotZ": -1.2219437E-08,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84677,7 +84693,7 @@
       "Description": "When you would draw a card, instead lose this.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84718,9 +84734,9 @@
         "posX": -55.00712,
         "posY": 1.075,
         "posZ": 12.9998245,
-        "rotX": -2.133437E-07,
+        "rotX": -1.08898213E-07,
         "rotY": 179.968719,
-        "rotZ": -2.527309E-07,
+        "rotZ": -1.03423908E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84729,7 +84745,7 @@
       "Description": "When the owner of this token buys a card from the pile this was placed on, they may trash a card from their hand.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -84770,9 +84786,9 @@
         "posX": -55.0071335,
         "posY": 1.075,
         "posZ": 11.5001612,
-        "rotX": -6.581293E-08,
+        "rotX": -1.93863485E-07,
         "rotY": 180.043,
-        "rotZ": -1.67445737E-08,
+        "rotZ": 1.70095092E-07,
         "scaleX": 0.6,
         "scaleY": 1.0,
         "scaleZ": 0.6
@@ -84781,7 +84797,7 @@
       "Description": "This starts face up.",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1179987,
+        "r": 0.117998667,
         "g": 0.53,
         "b": 1.0
       },
@@ -85135,7 +85151,7 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.96,
-        "g": 0.438998669,
+        "g": 0.43899864,
         "b": 0.807
       },
       "LayoutGroupSortIndex": 0,
@@ -85188,7 +85204,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171998173
+        "b": 0.171998143
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -85665,66 +85681,15 @@
       ]
     },
     {
-      "GUID": "b853e8",
-      "Name": "Custom_Tile",
-      "Transform": {
-        "posX": 15.0,
-        "posY": 0.960000634,
-        "posZ": 12.5,
-        "rotX": -4.18325747E-08,
-        "rotY": 180.000351,
-        "rotZ": -2.955667E-07,
-        "scaleX": 1.5,
-        "scaleY": 1.0,
-        "scaleZ": 1.5
-      },
-      "Nickname": "Trade Route Mat",
-      "Description": "Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move its token to this mat.",
-      "GMNotes": "",
-      "ColorDiffuse": {
-        "r": 0.0,
-        "g": 0.0,
-        "b": 0.0
-      },
-      "LayoutGroupSortIndex": 0,
-      "Value": 0,
-      "Locked": true,
-      "Grid": true,
-      "Snap": true,
-      "IgnoreFoW": false,
-      "MeasureMovement": false,
-      "DragSelectable": true,
-      "Autoraise": true,
-      "Sticky": true,
-      "Tooltip": true,
-      "GridProjection": false,
-      "HideWhenFaceDown": false,
-      "Hands": false,
-      "CustomImage": {
-        "ImageURL": "http://cloud-3.steamusercontent.com/ugc/482274241054376183/DA26458D512A3484D3A3E615494D0DBEB4E55CB9/",
-        "ImageSecondaryURL": "",
-        "ImageScalar": 1.0,
-        "WidthScale": 0.0,
-        "CustomTile": {
-          "Type": 3,
-          "Thickness": 0.2,
-          "Stackable": false,
-          "Stretch": true
-        }
-      },
-      "LuaScript": "obj,n,b=nil,0,setmetatable({\nlabel='',click_function='DCoin',function_owner=self,scale={0.6,0.6,0.6},\nposition={0,0.3,0},height=300,width=2400,font_size=200},{\n__call=function(t,c,l,z)t.click_function,t.label,t.position[3]=c,l,z self.createButton(t)end})\nfunction onSave()return 0 end\nfunction onLoad(d)if d~=''then n=d end display()end\nfunction display()self.clearButtons()self.createButton({\nlabel=n,color={0.9,0.9,0.3},click_function='PCoin',function_owner=self,position={1.1,0.2,0},height=500,width=400,font_size=500})obj=nil end\n\nfunction PCoin()printToAll('Trade Route makes '..n..' Money!',{0.9,0.9,0.3})end\nfunction DCoin()obj.destruct()n=n+1 display()end\nfunction SCoin()obj=nil display()end\nfunction onCollisionEnter(info)\n  if not obj then\n    obj=info.collision_object\n    if obj.getName()=='Coin Token'then\nb('DCoin','Add Money to Trade Route',-0.7)\nb('SCoin','Skip Coin to Trade Route',0.7)\nend end end",
-      "LuaScriptState": ""
-    },
-    {
       "GUID": "16e3aa",
       "Name": "Deck",
       "Transform": {
         "posX": -20.4000053,
         "posY": 1.28809583,
         "posZ": 37.7499924,
-        "rotX": -3.476811E-08,
+        "rotX": -1.21290409E-08,
         "rotY": 180.0,
-        "rotZ": 6.655921E-08,
+        "rotZ": 3.78251919E-08,
         "scaleX": 1.6,
         "scaleY": 1.0,
         "scaleZ": 1.6
@@ -87172,7 +87137,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Victory Point - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "1b4618",
@@ -87223,7 +87189,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Victory Point - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "b59b65",
@@ -87274,7 +87241,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Victory Point - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "84f540",
@@ -87325,7 +87293,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Victory Point - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "0d128b",
@@ -87376,7 +87345,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Victory Point - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "c979ca",
@@ -87427,7 +87397,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Victory Point - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "a34771",
@@ -87478,7 +87449,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Debt - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "3d4844",
@@ -87529,7 +87501,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Debt - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "186c83",
@@ -87580,7 +87553,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Debt - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "9cfa4a",
@@ -87631,7 +87605,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Debt - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "10cb81",
@@ -87682,7 +87657,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Debt - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "f2a253",
@@ -87733,7 +87709,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Debt - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "22bdb3",
@@ -87784,7 +87761,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Coffers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "b2dc22",
@@ -87835,7 +87813,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Coffers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "b6bf41",
@@ -87886,7 +87865,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Coffers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "4b832d",
@@ -87937,7 +87917,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Coffers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "ce8828",
@@ -87988,7 +87969,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Coffers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "17dd2a",
@@ -88039,7 +88021,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={2,1,2},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Coffers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "37049a",
@@ -88059,9 +88042,9 @@
       "Description": "",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.249998659,
-        "g": 0.249998659,
-        "b": 0.249998659
+        "r": 0.2499986,
+        "g": 0.2499986,
+        "b": 0.2499986
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88078,7 +88061,8 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "LuaScript": "version,mod_name=2,'Dominion Play Area'\r\nlocal debugMode = false\r\nlocal playArea,currDebt,option=false,false,{Flag=false,Horn=false,autoHorn=false}\r\nfunction onLoad(sData)\r\n    PlayerTracking = nil\r\n    onDrop()\r\n\r\n    if sData=='' then return end\r\n\r\n    local o=sData:match('(w+)')\r\n    o=getObjectFromGUID(o)\r\n    if o then\r\n        playArea=o\r\n    else\r\n        onSave()\r\n    end\r\nend\r\n\r\nfunction onSave()if playArea then return playArea.getGUID() end return''end\r\nfunction onDrop()broadcastToAll('The Play Area will be set up when turns are turned on.\\nOr a player passes the turn.',{0.9,0.9,0.9})end\r\n\r\nfunction onChat(s,p)\r\n  if p.admin then\r\n    local m=s:lower()\r\n    if m=='unlock'then self.interactable=true\r\n    elseif m=='delete'then self.destroy()\r\n    elseif m=='simulate'then onPlayerTurn(p)\r\nend end end\r\n\r\nfunction onObjectEnterScriptingZone(z,o)\r\n    if z~=playArea then return end\r\n\r\n    local cardinfo = cardDetails[o.getName()]\r\n    if (cardinfo) then\r\n      local isAction, isTreasure = false,false \r\n      for __,cardType in ipairs(cardinfo[2]) do\r\n        if cardType == \"Action\" then isAction = true end \r\n        if cardType == \"Treasure\" then isTreasure = true end \r\n      end \r\n\r\n      t=UpdatePlayerTracking(Turns.turn_color)\r\n      t.draw = 0\r\n\r\n      --if isAction then t.handleAction(t,cardinfo) end\r\n      --if isTreasure then t.handleTresure(t,cardinfo) end      \r\n\r\n      --if t.draw > 0 then  AutoDrawCards(t) end\r\n\r\n    else\r\n      if debug then broadcastToAll(\"CardNotReconized\") end\r\n    end\r\n\r\n\r\n    local dToken=getObjectFromGUID(Global.getTable('ref_players')[Turns.turn_color].debt)\r\n    if dToken and not currDebt then\r\n        local n=dToken.getVar('count')\r\n        if n>0 then currDebt=n\r\n            broadcastToAll(Player[Turns.turn_color].steam_name..' has [ee1111]'..n..' Debt',stringColorToRGB(Turns.turn_color))\r\n        end\r\n    end\r\nend\r\n\r\nPlayerTracking = nil\r\n\r\nfunction onPlayerTurn(player)\r\n    TintMe()\r\n    if Global.getVar('gameState')~=3 then return end\r\n    if PlayerTracking == nil then PlayerTracking = Global.getTable('ref_players') end\r\n    if not playArea then SetPlayArea() return end\r\n    if Player[Turns.getPreviousTurnColor()]  == nil then return end\r\n\r\n    --Find where to put them\r\n    local t=UpdatePlayerTracking(Turns.getPreviousTurnColor())\r\n\r\n    --Put play area and hand in discard pile\r\n    putDiscard(playArea.getObjects(),t.discard)\r\n    putDiscard(Player[Turns.getPreviousTurnColor()].getHandObjects(),t.discard,true)\r\n\r\n    t.color=Turns.getPreviousTurnColor()\r\n    t.draw=5\r\n    Wait.time(function() AutoDrawCards(t) end, 1.2)\r\n\r\n    local t=UpdatePlayerTracking(Turns.turn_color)\r\n    t.actions = 1\r\n    t.buys = 1\r\n    t.coinsCTR = 0\r\n    t.handleAction = DefaultAction\r\n    t.handleTresure = DefaultTreasure\r\nend\r\n\r\nfunction DefaultTreasure(p,cardinfo)\r\n\r\nend\r\n\r\nfunction DefaultAction(p,cardinfo)\r\n  if p.actions <= 0 then return end\r\n  \r\n  p.actions = t.actions + cardinfo[4] - 1\r\n  p.draw = cardinfo[3]\r\n  p.buys = p.buys + cardinfo[5]\r\n\r\n\r\n  if p.draw > 0 then\r\n    autoDrawCards(p)\r\n  end\r\n  --CARD NAME = {COST,{TYPE},Card,Action,Buy},\r\nend\r\n\r\nfunction UpdatePlayerTracking(playerColor)\r\n  local t=PlayerTracking[playerColor]\r\n  t.discardZoneObj=getObjectFromGUID(t.discardZone)\r\n  t.discard=t.discardZoneObj.getPosition()\r\n  t.deckZoneObj=getObjectFromGUID(t.deckZone)\r\n  t.deck=t.deckZoneObj.getPosition()\r\n  t.color=playerColor\r\n  if t.actions == nil then t.actions = 1 end\r\n  if t.buys == nil then t.buys = 1 end\r\n  if t.coinsCTR == nil then t.coinsCTR = 0 end\r\n  if t.potions  == nil then t.potions = 0 end\r\n  return t\r\nend\r\n\r\nfunction TintMe()\r\n  --Set Play Mat tint darkerwww\r\n  local c=stringColorToRGB(Turns.turn_color)\r\n  for k,v in pairs(c)do c[k]=(v*0.6)+0.1 end c[4]=1\r\n  self.setColorTint(c)\r\nend\r\n\r\n\r\nfunction DropPiece(bagRef, droppingPlayerColor)\r\n  local grabbag = getObjectFromGUID(bagRef)\r\n  if not grabbag then return end\r\n\r\n  local playPos = Player[droppingPlayerColor].getPointerPosition() + Vector(0,2,0)\r\n  grabbag.takeObject({position=playPos,rotation={0,180,0}})\r\nend\r\n\r\n\r\nfunction onScriptingButtonDown(index, player_color)\r\n    if Global.getVar('gameState')~=3 then return end\r\n    if PlayerTracking == nil then PlayerTracking = Global.getTable('ref_players') end\r\n    if debugMode then broadcastToAll(\"button down deteced : \".. index.. \":\".. player_color) end\r\n    local t=UpdatePlayerTracking(player_color)\r\n    if t == nil then if debugMode then broadcastToAll(\"NoPlayer\") end end\r\n\r\n    if index==10 then t.draw = 1 AutoDrawCards(t) end\r\n\r\n    if index==1 then t.actions = t.actions + 1 end\r\n    if index==2 then t.buys = t.buys + 1 end\r\n    if index==3 then t.coinsCTR = t.coinsCTR + 1 end\r\n    if index==7 then t.potions = t.potions + 1 end\r\n\r\n    if index==4 then t.actions = t.actions - 1 end\r\n    if index==5 then t.buys = t.buys - 1 end\r\n    if index==6 then t.coinsCTR = t.coinsCTR - 1 end\r\n    if index==8 then t.potions = t.potions - 1 end\r\nend\r\n\r\nfunction SetPlayArea()\r\n  self.interactable=false\r\n  self.setLock(true)\r\n  self.setPosition({0,1,-2.2})\r\n  self.setRotation({0,0,0})\r\n  self.setScale({112,0.1,16.4})\r\n  self.setName('playArea')\r\n  self.setDescription('Cards played here and in your hand will be auto discarded once you end your turn. Make sure to keep any Duration cards off this play area untill they are ready to be discarded. A new 5 cards will be drawn automaticly once you end your turn.')\r\n\r\n  local tZ={type='ScriptingTrigger',scale=self.getBounds().size,position=self.getPosition(),callback_function=function(obj)playArea=obj;onSave()end}\r\n  tZ.scale.y=2;tZ.position.y=(tZ.position[2]+tZ.scale[2]-(tZ.scale.y/2))\r\n  spawnObject(tZ).setLuaScript(clean('playArea'))\r\nend\r\n\r\n\r\nfunction AutoDrawCards(p)\r\n  local cDk=getDeck(p.deckZoneObj.getObjects())\r\n  --Attempt to draw cards\r\n\r\n  if not cDk then ReshuffleDiscard(p) return end\r\n  if cDk.tag=='Card'and p.draw>0 then\r\n      --Put that card in the hand\r\n      cDk.setRotation({0,180,0})\r\n      cDk.setPosition(Player[p.color].getHandTransform().position)\r\n      p.draw = p.draw -1\r\n      ReshuffleDiscard(p)\r\n      return\r\n  end\r\n  local remaining = p.draw - cDk.getQuantity()\r\n  cDk.deal(p.draw,p.color)\r\n  p.draw = remaining\r\n  ReshuffleDiscard(p)\r\nend\r\n\r\n\r\n\r\nfunction ReshuffleDiscard(p)\r\n  --Calculate Remaining\r\n\r\n    if p.draw <= 0 then return end\r\n\r\n    local cDk=getDeck(p.discardZoneObj.getObjects())\r\n    --Reshuffle Discard Pile\r\n    if not cDk then broadcastToAll('Nothing in discard for player',{0.9,0.1,0.9}) return end\r\n    if cDk.tag=='Card'then cDk.setPosition(Player[p.color].getHandTransform().position) return end\r\n\r\n    cDk.setRotation({180,0,0})\r\n    cDk.shuffle()\r\n    cDk.setPositionSmooth(p.deck)\r\n\r\n    --Draw Remaining Cards\r\n    cDk.deal(p.draw,p.color)\r\n    p.draw = 0\r\nend\r\n\r\n\r\nfunction putDiscard(t,p,hand)\r\n  for _,v in pairs(t)do\r\n    if v.getLock()==true then\r\n    elseif v.getDescription():find('Boon')then\r\n    elseif v.getDescription():find('Hex')then\r\n    elseif v.getDescription():find('State')then\r\n    elseif v.getDescription():find('Artifact')then\r\n    elseif v.tag=='Deck'or v.tag=='Card'then\r\n      v.setScale({1.88,1,1.88})\r\n      v.setRotation({0,180,0})\r\n      if hand then\r\n        v.clone({position=p})\r\n        v.destruct()\r\n      else\r\n        v.setPosition(p)\r\nend end end end\r\nfunction getDeck(z)for _,v in pairs(z)do if v.tag=='Deck'or v.tag=='Card'then return v end end return false end\r\nfunction clean(s)return('self.setName(\\'%s\\')function bye(o) if o.getName():find(\\'PLAY AREA\\')then self.destruct()end end function onObjectDestroy(o)bye(o)end function onObjectDrop(p,o)bye(o)end'):format(s,s)end\r\n\r\n\r\nspawningBags = {\r\n  [\"lessDraw\"] = \"\"\r\n}\r\n\r\n--CARD NAME = {COST,{TYPE},Card,Action,Buy},\r\ncardDetails = {\r\n  [\"Artisan\"] =  {6,{\"Action\"},0,0,0},\r\n  [\"Bandit\"]= {5,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Bureaucrat\"]= {4,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Cellar\"]= {2,{\"Action\"},0,1,0},\r\n  [\"Chapel\"]= {2,{\"Action\"},0,0,0},\r\n  [\"Council Room\"]= {5,{\"Action\"},4,0,1},\r\n  [\"Festival\"]= {5,{\"Action\"},0,2,1},\r\n  [\"Gardens\"]= {4,{\"Victory\"},0,0,0},\r\n  [\"Harbinger\"]= {3,{\"Action\"},1,1,0},\r\n  [\"Laboratory\"]= {5,{\"Action\"},2,1,0},\r\n  [\"Library\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Market\"]= {5,{\"Action\"},1,1,1},\r\n  [\"Merchant\"]= {3,{\"Action\"},1,1,0},\r\n  [\"Militia\"]= {4,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Mine\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Moat\"]= {2,{\"Action\",\"Reaction\"},2,0,0},\r\n  [\"Moneylender\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Poacher\"]= {4,{\"Action\"},1,1,0},\r\n  [\"Remodel\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Sentry\"]= {5,{\"Action\"},1,1,0},\r\n  [\"Smithy\"]= {4,{\"Action\"},3,0,0},\r\n  [\"Throne Room\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Vassal\"]= {3,{\"Action\"},0,0,0},\r\n  [\"Village\"]= {3,{\"Action\"},1,2,0},\r\n  [\"Witch\"]= {5,{\"Action\",\"Attack\"},2,0,0},\r\n  [\"Workshop\"]= {3,{\"Action\"},0,0,0},\r\n  [\"Courtyard\"]= {2,{\"Action\"},3,0,0},\r\n  [\"Conspirator\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Courtier\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Baron\"]= {4,{\"Action\"},0,0,1},\r\n  [\"Bridge\"]= {4,{\"Action\"},0,0,1},\r\n  [\"Diplomat\"]= {4,{\"Action\",\"Reaction\"},2,0,0},\r\n  [\"Duke\"]= {5,{\"Victory\"},0,0,0},\r\n  [\"Harem\"]= {6,{\"Treasure\",\"Victory\"},0,0,0},\r\n  [\"Nobles\"]= {6,{\"Action\",\"Victory\"},0,0,0},\r\n  [\"Ironworks\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Lurker\"]= {2,{\"Action\"},0,1,0},\r\n  [\"Masquerade\"]= {3,{\"Action\"},2,0,0},\r\n  [\"Mill\"]= {4,{\"Action\",\"Victory\"},1,1,0},\r\n  [\"Mining Village\"]= {4,{\"Action\"},1,2,0},\r\n  [\"Minion\"]= {5,{\"Action\",\"Attack\"},0,1,0},\r\n  [\"Patrol\"]= {5,{\"Action\"},3,0,0},\r\n  [\"Pawn\"]= {2,{\"Action\"},0,0,0},\r\n  [\"Replace\"]= {5,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Secret Passage\"]= {4,{\"Action\"},2,1,0},\r\n  [\"Shanty Town\"]= {3,{\"Action\"},0,2,0},\r\n  [\"Steward\"]= {3,{\"Action\"},0,0,0},\r\n  [\"Swindler\"]= {3,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Torturer\"]= {5,{\"Action\",\"Attack\"},3,0,0},\r\n  [\"Trading Post\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Upgrade\"]= {5,{\"Action\"},1,1,0},\r\n  [\"Wishing Well\"]= {3,{\"Action\"},1,1,0},\r\n  [\"Ambassador\"]= {2,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Bazaar\"]= {5,{\"Action\"},1,2,0},\r\n  [\"Caravan\"]= {4,{\"Action\",\"Duration\"},1,1,0},\r\n  [\"Cutpurse\"]= {4,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Embargo\"]= {2,{\"Action\"},0,0,0},\r\n  [\"Explorer\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Fishing Village\"]= {3,{\"Action\",\"Duration\"},0,2,0},\r\n  [\"Ghost Ship\"]= {5,{\"Action\",\"Attack\"},2,0,0},\r\n  [\"Haven\"]= {2,{\"Action\",\"Duration\"},1,1,0},\r\n  [\"Island\"]= {4,{\"Action\",\"Victory\"},0,0,0},\r\n  [\"Lighthouse\"]= {2,{\"Action\",\"Duration\"},0,1,0},\r\n  [\"Lookout\"]= {3,{\"Action\"},0,1,0},\r\n  [\"Merchant Ship\"]= {5,{\"Action\",\"Duration\"},0,0,0},\r\n  [\"Native Village\"]= {2,{\"Action\"},0,2,0},\r\n  [\"Navigator\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Outpost\"]= {5,{\"Action\",\"Duration\"},0,0,0},\r\n  [\"Pearl Diver\"]= {2,{\"Action\"},1,1,0},\r\n  [\"Pirate Ship\"]= {4,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Salvager\"]= {4,{\"Action\"},0,0,1},\r\n  [\"Sea Hag\"]= {4,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Smugglers\"]= {3,{\"Action\"},0,0,0},\r\n  [\"Tactician\"]= {5,{\"Action\",\"Duration\"},0,0,0},\r\n  [\"Treasure Map\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Treasury\"]= {5,{\"Action\"},1,1,0},\r\n  [\"Warehouse\"]= {3,{\"Action\"},3,2,0},\r\n  [\"Wharf\"]= {5,{\"Action\",\"Duration\"},0,0,0},\r\n  [\"Alchemist\"]= {3 ,{\"Action\"},2,1,0},\r\n  [\"Apothecary\"]= {2 ,{\"Action\"},1,1,0},\r\n  [\"Apprentice\"]= {5,{\"Action\"},0,1,0},\r\n  [\"Familiar\"]= {3 ,{\"Action\",\"Attack\"},1,1,0},\r\n  [\"Golem\"]= {4 ,{\"Action\"},0,0,0},\r\n  [\"Herbalist\"]= {2,{\"Action\"},0,0,1},\r\n  [\"Philosopher's Stone\"]= {3 ,{\"Treasure\"},0,0,0},\r\n  [\"Possession\"]= {6 ,{\"Action\"},0,0,0},\r\n  [\"Scrying Pool\"]= {2 ,{\"Action\",\"Attack\"},0,1,0},\r\n  [\"Transmute\"]= {0,{\"Action\"},0,0,0},\r\n  [\"University\"]= {2 ,{\"Action\"},0,2,0},\r\n  [\"Vineyard\"]= {0,{\"Victory\"},0,0,0},\r\n  [\"Bank\"]= {7,{\"Treasure\"},0,0,0},\r\n  [\"Bishop\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Contraband\"]= {5,{\"Treasure\"},0,0,1},\r\n  [\"Counting House\"]= {5,{\"Action\"},0,0,0},\r\n  [\"City\"]= {5,{\"Action\"},1,2,0},\r\n  [\"Expand\"]= {7,{\"Action\"},0,0,0},\r\n  [\"Forge\"]= {7,{\"Action\"},0,0,0},\r\n  [\"Grand Market\"]= {6,{\"Action\"},1,1,1},\r\n  [\"Goons\"]= {6,{\"Action\",\"Attack\"},0,0,1},\r\n  [\"Hoard\"]= {6,{\"Treasure\"},0,0,0},\r\n  [\"King's Court\"]= {7,{\"Action\"},0,0,0},\r\n  [\"Loan\"]= {3,{\"Treasure\"},0,0,0},\r\n  [\"Mint\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Monument\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Mountebank\"]= {5,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Peddler\"]= {8,{\"Action\"},1,1,0},\r\n  [\"Quarry\"]= {4,{\"Treasure\"},0,0,0},\r\n  [\"Rabble\"]= {5,{\"Action\",\"Attack\"},3,0,0},\r\n  [\"Royal Seal\"]= {5,{\"Treasure\"},0,0,0},\r\n  [\"Talisman\"]= {4,{\"Treasure\"},0,0,0},\r\n  [\"Trade Route\"]= {3,{\"Action\"},0,0,1},\r\n  [\"Vault\"]= {5,{\"Action\"},2,0,0},\r\n  [\"Venture\"]= {5,{\"Treasure\"},0,0,0},\r\n  [\"Watchtower\"]= {3,{\"Action\",\"Reaction\"},0,0,0},\r\n  [\"Worker's Village\"]= {4,{\"Action\"},1,2,1},\r\n  [\"Fairgrounds\"]= {6,{\"Victory\"},0,0,0},\r\n  [\"Farming Village\"]= {4,{\"Action\"},0,2,0},\r\n  [\"Fortune Teller\"]= {3,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Hamlet\"]= {2,{\"Action\"},1,1,0},\r\n  [\"Harvest\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Horse Traders\"]= {4,{\"Action\",\"Reaction\"},0,0,1},\r\n  [\"Horn Of Plenty\"]= {5,{\"Treasure\"},0,0,0},\r\n  [\"Hunting Party\"]= {5,{\"Action\"},1,1,0},\r\n  [\"Jester\"]= {5,{\"Action\",\"Attack\"},0,0,0},\r\n  [\"Menagerie\"]= {3,{\"Action\"},0,1,0},\r\n  [\"Remake\"]= {4,{\"Action\"},0,0,0},\r\n  [\"Tournment\"]= {4,{\"Action\"},0,1,0},\r\n  [\"Young Witch\"]= {4,{\"Action\",\"Attack\"},2,0,0},\r\n  [\"Border Village\"]= {6,{\"Action\"},1,2,0},\r\n  [\"Cache\"]= {5,{\"Treasure\"},0,0,0},\r\n  [\"Cartographer\"]= {5,{\"Action\"},1,1,0},\r\n  [\"Crossroads\"]= {2,{\"Action\"},0,0,0},\r\n  [\"Develop\"]= {3,{\"Action\"},0,0,0},\r\n  [\"Duchess\"]= {2,{\"Action\"},0,0,0},\r\n  [\"Embassy\"]= {5,{\"Action\"},5,0,0},\r\n  [\"Farmland\"]= {6,{\"Victory\"},0,0,0},\r\n  [\"Fool's Gold\"]= {2,{\"Treasure\",\"Reaction\"},0,0,0},\r\n  [\"Haggler\"]= {5,{\"Action\"},0,0,0},\r\n  [\"Highway\"]= {5,{\"Action\"},1,1,0},\r\n  [\"Ill-Gotten Gains\"]= {5,{\"Treasure\"},0,0,0}\r\n}\r\n--EOF",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "f6b102",
@@ -88098,9 +88082,9 @@
       "Description": "Green",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1919977,
+        "r": 0.191997677,
         "g": 0.701,
-        "b": 0.167997688
+        "b": 0.167997658
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88129,7 +88113,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Villagers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "ab4499",
@@ -88149,7 +88134,7 @@
       "Description": "Blue",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997624,
+        "r": 0.117997594,
         "g": 0.53,
         "b": 1.0
       },
@@ -88180,7 +88165,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Villagers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "8dbffe",
@@ -88231,7 +88217,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Villagers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "166871",
@@ -88253,7 +88240,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997726
+        "b": 0.1719977
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88282,7 +88269,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Villagers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "613e45",
@@ -88303,8 +88291,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999769,
-        "b": 0.09399768
+        "g": 0.09999766,
+        "b": 0.09399765
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88333,7 +88321,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Villagers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "ebb158",
@@ -88354,8 +88343,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.3919976,
-        "b": 0.1129976
+        "g": 0.391997576,
+        "b": 0.112997569
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88384,7 +88373,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Villagers - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "51ad45",
@@ -88435,7 +88425,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Ship Coins - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "c68248",
@@ -88455,7 +88446,7 @@
       "Description": "Blue",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.117997624,
+        "r": 0.117997594,
         "g": 0.53,
         "b": 1.0
       },
@@ -88486,7 +88477,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Ship Coins - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "341110",
@@ -88506,9 +88498,9 @@
       "Description": "Green",
       "GMNotes": "",
       "ColorDiffuse": {
-        "r": 0.1919977,
+        "r": 0.191997677,
         "g": 0.701,
-        "b": 0.167997688
+        "b": 0.167997658
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88537,7 +88529,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Ship Coins - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "b64745",
@@ -88558,8 +88551,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.856,
-        "g": 0.09999772,
-        "b": 0.09399771
+        "g": 0.09999769,
+        "b": 0.09399768
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88588,7 +88581,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Ship Coins - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
     },
     {
       "GUID": "286357",
@@ -88610,7 +88604,7 @@
       "ColorDiffuse": {
         "r": 0.905,
         "g": 0.898,
-        "b": 0.171997726
+        "b": 0.1719977
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88639,7 +88633,8 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Ship Coins - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": "{\"c\":0}"
+      "LuaScriptState": "{\"c\":0}",
+      "XmlUI": ""
     },
     {
       "GUID": "e323d8",
@@ -88660,8 +88655,8 @@
       "GMNotes": "",
       "ColorDiffuse": {
         "r": 0.9559999,
-        "g": 0.391997635,
-        "b": 0.112997629
+        "g": 0.3919976,
+        "b": 0.1129976
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -88690,7 +88685,143 @@
         }
       },
       "LuaScript": "function updateSave()self.script_state=JSON.encode({['c']=count})end\r\nfunction wait(t)local s=os.time()repeat coroutine.yield(0)until os.time()>s+t end\r\nfunction baker()count=1 self.editButton({index=0,label=count})updateSave()end\r\nfunction getCount()return count end\r\nfunction onload(s)\r\n  --Loads the tracking for if the game has started yet\r\n  local y=0.05\r\n  if s~=''then local ld=JSON.decode(s);count=ld.c else count=0 end\r\n\r\n  self.createButton({\r\n        click_function='click_changeValue',\r\n        function_owner=self,\r\n        position={0,y+0.05,0},\r\n        height=0,\r\n        width=0,\r\n        font_size=600,\r\n        scale={2,1,2},\r\n        label=count\r\n    })\r\n    self.createButton({\r\n      click_function='click_changeValue',\r\n      function_owner=self,\r\n      position={0,y+0.05,0},\r\n      height=600,\r\n      width=600,\r\n      font_size=600,\r\n      scale={1,1,1},\r\n      color={1,1,1,0.7},\r\n      label=\"\",\r\n      tooltip=\"Ship Coins - right click to subtract\"\r\n  })\r\nend\r\n\r\nfunction click_changeValue(obj, color, alt_click)\r\n  local C3=count\r\n  count = count + (alt_click and -1 or 1)\r\n  if count < 0 then count=0 end\r\n  local C1=count\r\n  function clickCoroutine()\r\n    if C2==nil then C2=C3 end\r\n    wait(3)\r\n    if C1==count and C2~=nil then\r\n      local txt,n=owner..' %s %s '..ref_type..'.',math.abs(count-C2)\r\n      if n~=1 then txt=txt:gsub('s%.','.')end\r\n      if C1>C2 then\r\n        txt=txt:format('gains',n)\r\n      elseif C1<C2 then\r\n        txt=txt:format('loses',n)end\r\n      if C1~=C2 then printToAll(txt, {1,1,1})end\r\n      C2=nil\r\n    end return 1 end\r\n  startLuaCoroutine(self,'clickCoroutine')\r\n  self.editButton({index=0,label=count})\r\n  updateSave()\r\nend\r\np=self.getPosition()\r\nself.setPosition({p[1],1.1,p[3]})\r\nself.setRotation({0,180,0})\r\nref_type,owner,C2=self.getName(),self.getDescription(),nil",
-      "LuaScriptState": ""
+      "LuaScriptState": "",
+      "XmlUI": ""
+    },
+    {
+      "GUID": "95df95",
+      "Name": "Infinite_Bag",
+      "Transform": {
+        "posX": 12.5,
+        "posY": 1.033,
+        "posZ": 2.0,
+        "rotX": 4.39828227E-07,
+        "rotY": 179.974762,
+        "rotZ": 1.706378E-07,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "New Editor",
+      "Description": "reset",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 0.3058885,
+        "g": 0.372555166,
+        "b": 1.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "MaterialIndex": -1,
+      "MeshIndex": -1,
+      "LuaScript": "local userInterface = { \r\n    { function_owner = self, label = \"Ipso Facto\", position = { 00.00 , 00.70 , 01.20 }, scale = { 01.00 , 00.50 , 01.00 }, scale = { 01.00 , 00.50 , 01.00 }, width = 2000, height = 400, font_size = 400},\r\n    { function_owner = self, label = \"Set\", position = { 01.00 , 00.70 , 02.00 }, scale = { 01.00 , 00.50 , 01.00 }, scale = { 01.00 , 00.50 , 01.00 }, width = 1000, height = 400, font_size = 400},\r\n    { function_owner = self, label = \"Load\", position = { -01.00 , 00.70 , 02.00 }, scale = { 01.00 , 00.50 , 01.00 }, scale = { 01.00 , 00.50 , 01.00 }, width = 1000, height = 400, font_size = 400},\r\n}\r\n\r\ninternalData = {\r\n    guidLocked = false,\r\n    guid = \"\"\r\n}\r\n\r\nfunction onLoad(save_data)\r\n    loadSave(save_data)\r\n    loadUI()\r\nend\r\n\r\nfunction onSave()\r\n    return JSON.encode(internalData)\r\nend\r\n\r\nfunction loadSave(save_data)\r\n    if self.getDescription() == \"reset\" then return end\r\n\r\n    internalData = JSON.decode(save_data)\r\nend\r\n\r\nfunction loadUI()\r\n    --creates toggle for if the button can be changed\r\n    generateButton(userInterface[1], \"toggleGuidLocked\", function()\r\n        internalData.guidLocked = not internalData.guidLocked\r\n        userInterface[1].label = string.format( internalData.guidLocked and \"►%s◄\" or \"◄%s►\", tostring(internalData.guid) )\r\n        self.editButton(userInterface[1])\r\n    end)\r\n    -- toggle the value once then use the buttion toggle to set it back and set the UI correctly\r\n    internalData[\"guidLocked\"] = not internalData[\"guidLocked\"]\r\n    self.getVar(userInterface[1].click_function)()\r\n\r\n    generateButton(userInterface[2], \"set\", applyFromNotes)\r\n \r\n    generateButton(userInterface[3], \"load\", loadtoNotes)\r\n    \r\nend\r\n\r\nfunction onObjectLeaveContainer(container, leave_object)\r\n    if (container ~= self) then return end -- only care if it leaves me\r\n\r\n    -- don't get scripts till the \r\n    nextFrame(function ()\r\n        leave_object.call(\"extSetReportTo\", {self.getGUID()})\r\n        end,\r\n        \"placeholder\"\r\n)\r\n    \r\nend\r\n\r\nfunction nextFrame(func, ...)\r\n    local params = {...}\r\n    function runasCo()\r\n        coroutine.yield( 0 )\r\n        returns = func(unpack(params))\r\n        return 1\r\n    end\r\n    startLuaCoroutine(self, 'runasCo')\r\n    return\r\nend\r\n    \r\nfunction extUpdateGuidButton(args)\r\n    if internalData.guidLocked then return false end\r\n    \r\n    internalData[\"guid\"] = args[1]\r\n\r\n    internalData.guidLocked = not internalData.guidLocked\r\n    toggleGuidLocked()\r\n    return true\r\nend\r\n\r\n\r\nfunction loadtoNotes(obj, clicker_color, alt_click)\r\n    local luaToLoadObject = getObjectFromGUID(internalData.guid)\r\n    if luaToLoadObject == nil then\r\n        broadcasting[tostring(alt_click)](\"objectNotFound, load failed\", clicker_color)\r\n        return\r\n    end\r\n    for i,tab in ipairs(getNotebookTabs()) do\r\n          if tab.title == internalData.guid then\r\n              tab.body = luaToLoadObject.getLuaScript()\r\n              editNotebookTab(tab)\r\n              broadcasting[tostring(alt_click)](\"existing copy found, overwritten, hope you have those changes elsewhere\", clicker_color)\r\n              return\r\n          end\r\n    end\r\n    addNotebookTab({\r\n        title = internalData.guid,\r\n        body  = luaToLoadObject.getLuaScript()\r\n    })\r\n    broadcasting[tostring(alt_click)](\"New Note\", clicker_color)\r\nend\r\n\r\nfunction applyFromNotes(obj, clicker_color, alt_click)\r\n    local luaToLoadObject = getObjectFromGUID( internalData.guid)\r\n    if luaToLoadObject == nil then\r\n        broadcasting[tostring(alt_click)](\"objectNotFound Apply failed\", clicker_color)\r\n        return\r\n    end\r\n    for i,tab in ipairs(getNotebookTabs()) do\r\n        if tab.title == internalData.guid then\r\n            broadcasting[tostring(alt_click)](\"object overwritten GL\", clicker_color)\r\n            luaToLoadObject.setLuaScript(tab.body)\r\n            luaToLoadObject.reload()\r\n            return\r\n        end\r\n    end\r\n    broadcasting[tostring(alt_click)](\"Note Not Found\", clicker_color)\r\nend\r\n\r\n\r\n--[[buttonTable must be in a table to have value set otherwise must set return value]]\r\nfunction generateButton(buttonTable, functionName, func)\r\n    buttonTable.click_function = dynamicFunction(functionName, func)\r\n    self.createButton(buttonTable)\r\n    buttonTable = table.remove( self.getButtons())\r\n    return buttonTable\r\nend\r\n\r\nfunction dynamicFunction(funcName, func)\r\n    self.setVar(funcName, func)\r\n    return funcName\r\nend\r\n\r\n--[[Time stamped message broadcasting, either to all or color]]\r\nbroadcasting = {\r\n    [\"true\"] = function(message) broadcastToAll(os.date(string.format(\"%%H:%%M:%%S - %s\",message)) , {1,1,1}) end,\r\n    [\"false\"] = function(message,color) broadcastToColor(os.date(string.format(\"%%H:%%M:%%S - %s\",message)),color, {1,1,1}) end\r\n}",
+      "LuaScriptState": "{\"guid\":\"b853e8\",\"guidLocked\":false}",
+      "XmlUI": "",
+      "ContainedObjects": [
+        {
+          "GUID": "fc5000",
+          "Name": "Chinese_Checkers_Piece",
+          "Transform": {
+            "posX": 4.98327351,
+            "posY": 3.37406158,
+            "posZ": 5.99265051,
+            "rotX": 354.370758,
+            "rotY": 120.062813,
+            "rotZ": 178.705582,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "ColorDiffuse": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "Hands": false,
+          "MaterialIndex": 6,
+          "LuaScript": "function onObjectEnterScriptingZone(zone, object)\r\n    if object ~= self then return end\r\n\r\n    reportBack(zone)\r\nend\r\n\r\nfunction onCollisionEnter(info)\r\n    reportBack(info.collision_object)\r\n    self.destruct()\r\nend\r\n\r\nreportTo = nil\r\nfunction extSetReportTo(args)\r\n    reportTo = args[1]\r\nend\r\n\r\nfunction reportBack(object)\r\n    if reportTo == nil then return end\r\n    if object.getGUID() == nil then return end\r\n\r\n    if getObjectFromGUID(reportTo).call(\"extUpdateGuidButton\", {object.getGUID()} ) then return end\r\n\r\n    broadcasting[\"true\"](string.format( \"Found %s->%s : %s\",object.tag, object.name, object.getGUID() ))\r\nend\r\n\r\n\r\nbroadcasting = {\r\n    [\"true\"] = function(message) broadcastToAll(os.date(string.format(\"%%H:%%M:%%S - %s\",message)) , {1,1,1}) end,\r\n    [\"false\"] = function(message,color) broadcastToColor(os.date(string.format(\"%%H:%%M:%%S - %s\",message)),color, {1,1,1}) end\r\n}",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        }
+      ]
+    },
+    {
+      "GUID": "b853e8",
+      "Name": "Custom_Tile",
+      "Transform": {
+        "posX": 15.0,
+        "posY": 0.960000634,
+        "posZ": 12.5,
+        "rotX": -4.18325747E-08,
+        "rotY": 180.000351,
+        "rotZ": -2.955667E-07,
+        "scaleX": 1.5,
+        "scaleY": 1.0,
+        "scaleZ": 1.5
+      },
+      "Nickname": "Trade Route Mat",
+      "Description": "Setup: Put a token on each Victory card Supply pile. When a card is gained from that pile, move its token to this mat.",
+      "GMNotes": "",
+      "ColorDiffuse": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": true,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomImage": {
+        "ImageURL": "http://cloud-3.steamusercontent.com/ugc/482274241054376183/DA26458D512A3484D3A3E615494D0DBEB4E55CB9/",
+        "ImageSecondaryURL": "",
+        "ImageScalar": 1.0,
+        "WidthScale": 0.0,
+        "CustomTile": {
+          "Type": 3,
+          "Thickness": 0.2,
+          "Stackable": false,
+          "Stretch": true
+        }
+      },
+      "LuaScript": "obj,n,b=nil,0,setmetatable({\nlabel='',click_function='DCoin',function_owner=self,scale={0.6,0.6,0.6},\nposition={0,0.3,0},height=300,width=2400,font_size=200},{\n__call=function(t,c,l,z)t.click_function,t.label,t.position[3]=c,l,z self.createButton(t)end})\nfunction onSave()return 0 end\nfunction onLoad(d) n=0 display()end\nfunction display()self.clearButtons()self.createButton({\nlabel=n,color={0.9,0.9,0.3},click_function='PCoin',function_owner=self,position={1.1,0.2,0},height=500,width=400,font_size=500})obj=nil end\n\nfunction PCoin()printToAll('Trade Route makes '..n..' Money!',{0.9,0.9,0.3})end\nfunction DCoin()obj.destruct()n=n+1 display()end\nfunction SCoin()obj=nil display()end\nfunction onCollisionEnter(info)\n  if not obj then\n    obj=info.collision_object\n    if obj.getName()=='Coin Token'then\nb('DCoin','Add Money to Trade Route',-0.7)\nb('SCoin','Skip Coin to Trade Route',0.7)\nend end end",
+      "XmlUI": ""
     }
   ]
 }
