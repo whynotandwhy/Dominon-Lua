@@ -783,7 +783,6 @@ function onSave()
         for _,ks in ipairs(ref_kingdomSlots)do
             for j, v in ipairs(getObjectFromGUID(ks.zone).getObjects())do
                 if v.tag=='Card'then
-                    Use.Add(v.getName())
                     if v.getName()=='Young Witch'then
                         requireBane=true
                         break
