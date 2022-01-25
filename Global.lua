@@ -673,10 +673,8 @@ function onSave()
   end
   
   KingdomSlotCTR = 1
-  TotalEvents = 1
   function RandomizeCards()
     KingdomSlotCTR = 1
-    TotalEvents = 0
     local events={}
     for _,es in ipairs(ref_eventSlots)do
         for j, v in ipairs(getObjectFromGUID(es.zone).getObjects())do
@@ -684,7 +682,7 @@ function onSave()
         end
     end
     for i in ipairs(events)do events[i].setPosition(ref_eventSlots[i].pos) end
-    TotalEvents=#events
+    eventCount=#events
     NextCard()
   end
   
@@ -701,9 +699,9 @@ function onSave()
           startLuaCoroutine(Global, 'setupKingdomCoroutine')
       end
     else
-      TotalEvents = TotalEvents + 1
-      if TotalEvents <= eventMax then
-        card.setPosition(ref_eventSlots[TotalEvents].pos)
+      eventCount = eventCount + 1
+      if eventCount <= eventMax then
+        card.setPosition(ref_eventSlots[eventCount].pos)
         card.setRotation({0,90,0})
       else
          card.destruct()
@@ -769,13 +767,6 @@ function onSave()
   function setupKingdomCoroutine()
     local deck=false
     for i, v in ipairs(getObjectFromGUID(ref.randomizer.zone).getObjects())do if v.tag=='Deck'then deck=v end end
-    local events={}
-    for _,es in ipairs(ref_eventSlots)do
-        for j, v in ipairs(getObjectFromGUID(es.zone).getObjects())do
-            if v.tag=='Card'then table.insert(events, v) end
-        end
-    end
-    eventCount=#events
     if deck then
       local w=0
         wait(0.5)
