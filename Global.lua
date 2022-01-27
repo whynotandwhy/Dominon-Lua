@@ -55,7 +55,7 @@ function onSave()
         for _,o in pairs(getObjectFromGUID(ref_storageZone.setup).getObjects())do
           local f,n=false,o.getName()
           if(o.tag=='Deck'or o.tag=='Card')and n~='Heirlooms'and n~='Shelters'then
-            if not f then for pilename,v in pairs(ref_replacementPiles)do if n==pilename then f,v.guid=true,o.getGUID()break end end end
+            if not f then if ref_replacementPiles[n] then f=true ref_replacementPiles[n].obj = o end end
             if not f then for i,c in pairs(ref_eventSets)do if n==c.name then f,ref_eventSets[i].guid=true,o.getGUID()break end end end
             if not f then for i,c in pairs(ref_cardSets)do if n==c.name then f,ref_cardSets[i].guid=true,o.getGUID()break end end end
             if not f then o.highlightOn({1,0,0.5})print(n)end end end
@@ -1060,7 +1060,7 @@ function onSave()
     if not Use('Embargo')then getObjectFromGUID('7c2165').destruct()end
   
     for key,value in pairs(ref_replacementPiles)do
-      local obj=getObjectFromGUID(value.guid)
+      local obj=value.obj
       local pos=obj.getPosition()
       if pos[1]>16 or pos[1]<-16 then obj.destruct()
       elseif pos[3]>23 or pos[3]<13 then obj.destruct()
@@ -1277,7 +1277,7 @@ function onSave()
   function getType(n)for _,v in pairs(ref_master)do if n==v.name then return v.type end end return'Event'end
   function getSetup(n)if Use(n:gsub(' ',''))then for _,v in pairs(ref_master)do if n==v.name then if v.setup then return v.setup end end end end return function()end end
   function getPile(pileName)
-    if ref_replacementPiles[pileName] then return getObjectFromGUID( ref_replacementPiles[pileName].guid) end
+    if ref_replacementPiles[pileName] then return ref_replacementPiles[pileName].obj end
     for _,p in pairs(ref_basicSupplyPiles)do if pileName==p.name then return getObjectFromGUID(p.guid)end end
     for _,p in pairs(ref_extraSupplyPiles)do if pileName==p.name then return getObjectFromGUID(p.guid)end end
     for _,p in pairs(ref_sidePiles       )do if pileName==p.name then return getObjectFromGUID(p.guid)end end
