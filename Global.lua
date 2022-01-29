@@ -166,7 +166,7 @@ function onSave()
               for i, obj in ipairs(gObjs('tavern'))do
                   if obj.tag=='Deck'then
                       for j, card in ipairs(obj.getObjects())do
-                          if card.nickname=='Distant Lands'then
+                          if card.name=='Distant Lands'then
                               vP[currentPlayer]=vP[currentPlayer] + 4
                   end end end
                   if obj.tag=='Card'then
@@ -208,10 +208,10 @@ function onSave()
                   for _, obj in ipairs(getObjectFromGUID(ref_players[cp].deckZone).getObjects())do
                       if obj.tag=='Deck'then
                           for v,card in ipairs(obj.getObjects())do
-                              if dT[cp][card.nickname]==nil then
-                                  dT[cp][card.nickname]=1
+                              if dT[cp][card.name]==nil then
+                                  dT[cp][card.name]=1
                               else
-                                  dT[cp][card.nickname]=1+dT[cp][card.nickname]
+                                  dT[cp][card.name]=1+dT[cp][card.name]
                       end end end
                       if obj.tag=='Card'then
                           if dT[cp][card.getName()]==nil then
@@ -607,9 +607,9 @@ function onSave()
         local obj2=getObjectFromGUID(guid)
         if obj2 then
           for _,ref in ipairs(obj2.getObjects())do
-            if ref.nickname=='Young Witch'then
+            if ref.name=='Young Witch'then
               requireBane=true
-            elseif ref.nickname=='Black Market'then
+            elseif ref.name=='Black Market'then
               requireBlackMarket=true
     end end end end end
     if cardCount==10 and not requireBane and not requireBlackMarket then
@@ -636,8 +636,8 @@ function onSave()
           for j, guid in ipairs(useSets)do
               local obj2=getObjectFromGUID(guid)
               for k, ref in ipairs(obj2.getObjects())do
-                  if getCost(ref.nickname)=='M2D0P0'or getCost(ref.nickname)=='M3D0P0'then
-                      if ref.nickname~='Young Witch'then
+                  if getCost(ref.name)=='M2D0P0'or getCost(ref.name)=='M3D0P0'then
+                      if ref.name~='Young Witch'then
                           deckCheck=true
           end end end end
           if not deckCheck then
@@ -688,11 +688,10 @@ function onSave()
   
   
   function resolveRandom(card)
-    local tp=getType(card.getName())
-    Use.Add(card.getName())
-    local isEvent =  tp=='Event' or tp=='Landmark' or tp=='Project' or tp=='Way'
-    if (not isEvent) then
+    local cardName = card.getName()
+    if not IsNotSupply(cardName) then
       KingdomSlotCTR=KingdomSlotCTR  + 1
+      Use.Add(cardName)
       if KingdomSlotCTR < 11 then
         Wait.frames(NextCard,15)
       else
@@ -703,6 +702,7 @@ function onSave()
       if eventCount <= eventMax then
         card.setPosition(ref_eventSlots[eventCount].pos)
         card.setRotation({0,90,0})
+        Use.Add(cardName)
       else
          card.destruct()
       end
@@ -764,221 +764,100 @@ function onSave()
     Wait.frames(RandomizeCards, 80)
   end
   
-  function setupKingdomCoroutine()
-    local deck=false
-    for i, v in ipairs(getObjectFromGUID(ref.randomizer.zone).getObjects())do if v.tag=='Deck'then deck=v end end
-    if deck then
-      local w=0
-        wait(0.5)
-        local blackMarket, requireBane=false, false
-        for _,ks in ipairs(ref_kingdomSlots)do
-            for j, v in ipairs(getObjectFromGUID(ks.zone).getObjects())do
-                if v.tag=='Card'then
-                    if v.getName()=='Young Witch'then
-                        requireBane=true
-                        break
-                    elseif v.getName()=='Black Market'then
-                        blackMarket=true
-        end end end end
-        if Use('BlackMarket')then
-            deck.setName('Black Market deck')
-            local cleanDeck=false
-            local deckAddPos={deck.getPosition()[1],deck.getPosition()[2] + 2,deck.getPosition()[3]}
-            while not cleanDeck do
-                cleanDeck=true
-                for i, v in ipairs(deck.getObjects())do
-                    local tp=getType(v.getName()) if tp=='Event'or tp=='Landmark'or tp=='Project'or tp=='Way'then
-                        coroutine.yield(0)
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Knights'then
-                        coroutine.yield(0)
-                        getPile('Knights pile').shuffle()
-                        getPile('Knights pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Castles'then
-                        coroutine.yield(0)
-                        getPile('Castles pile').shuffle()
-                        getPile('Castles pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Catapult / Rocks'then
-                        coroutine.yield(0)
-                        getPile('Catapult / Rocks pile').shuffle()
-                        getPile('Catapult / Rocks pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Encampment / Plunder'then
-                        coroutine.yield(0)
-                        getPile('Encampment / Plunder pile').shuffle()
-                        getPile('Encampment / Plunder pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Gladiator / Fortune'then
-                        coroutine.yield(0)
-                        getPile('Gladiator / Fortune pile').shuffle()
-                        getPile('Gladiator / Fortune pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Patrician / Emporium'then
-                        coroutine.yield(0)
-                        getPile('Patrician / Emporium pile').shuffle()
-                        getPile('Patrician / Emporium pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Settlers / Bustling Village'then
-                        coroutine.yield(0)
-                        getPile('Settlers / Bustling Village pile').shuffle()
-                        getPile('Settlers / Bustling Village pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Sauna / Avanto'then
-                        coroutine.yield(0)
-                        getPile('Sauna / Avanto pile').shuffle()
-                        getPile('Sauna / Avanto pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    end
-                end
-            end
-            wait(2)
-            deck.shuffle()
-            while #deck.getObjects() > blackMarketMax + 1 do
-                coroutine.yield(0)
-                deck.takeObject({index=1}).destruct()
-            end
-            -- check for young witch
-            for i, v in ipairs(deck.getObjects())do
-                if v.nickname=='Young Witch'then
-                    requireBane=true
-                end
-            end
-            if not requireBane then
-                deck.takeObject({index=1}).destruct()
-            end
-        end
-        local baneSet, blackMarket2Check=false, false
-        if requireBane then
-            for i, v in ipairs(getObjectFromGUID(ref.baneSlot.zone).getObjects())do
-                if v.tag=='Card'and v.getName()~='Bane pile'then
-                    Use.Add(v.getName())
-                    baneSet=true
-                    if v.getName()=='Black Market'then
-                        blackMarket2Check=true
-            end end end
-            if not baneSet then
-                for j, card in ipairs(deck.getObjects())do
-                    if getType(card.getName())=='Event'or getType(card.getName())=='Landmark'or getType(card.getName())=='Project'or getType(card.getName())=='Way'then
-                    elseif getCost(card.nickname)=='M2D0P0'or getCost(card.nickname)=='M3D0P0'then
-                        Use.Add(card.nickname)
-                        if card.nickname=='Black Market'then
-                            blackMarket2Check=true
-                        end
-                        deck.takeObject({position=ref.baneSlot.pos, index=card.index, flip=true})
-                        break end end end end
-        if blackMarket2Check then
-            deck.setName('Black Market deck')
-            local cleanDeck=false
-            local deckAddPos={deck.getPosition()[1],deck.getPosition()[2] + 2,deck.getPosition()[3]}
-            while not cleanDeck do
-                cleanDeck=true
-                for i, v in ipairs(deck.getObjects())do
-                    local tp=getType(v.getName()) if tp=='Event'or tp=='Landmark'or tp=='Project'or tp=='Way'then
-                        coroutine.yield(0)
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Knights'then
-                        coroutine.yield(0)
-                        getPile('Knights pile').shuffle()
-                        getPile('Knights pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Castles'then
-                        coroutine.yield(0)
-                        getPile('Castles pile').shuffle()
-                        getPile('Castles pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Catapult / Rocks'then
-                        coroutine.yield(0)
-                        getPile('Catapult / Rocks pile').shuffle()
-                        getPile('Catapult / Rocks pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Encampment / Plunder'then
-                        coroutine.yield(0)
-                        getPile('Encampment / Plunder pile').shuffle()
-                        getPile('Encampment / Plunder pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Gladiator / Fortune'then
-                        coroutine.yield(0)
-                        getPile('Gladiator / Fortune pile').shuffle()
-                        getPile('Gladiator / Fortune pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Patrician / Emporium'then
-                        coroutine.yield(0)
-                        getPile('Patrician / Emporium pile').shuffle()
-                        getPile('Patrician / Emporium pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Settlers / Bustling Village'then
-                        coroutine.yield(0)
-                        getPile('Settlers / Bustling Village pile').shuffle()
-                        getPile('Settlers / Bustling Village pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break
-                    elseif v.nickname=='Sauna / Avanto'then
-                        coroutine.yield(0)
-                        getPile('Sauna / Avanto pile').shuffle()
-                        getPile('Sauna / Avanto pile').takeObject({index=1, position=deckAddPos, flip=true})
-                        deck.takeObject({index=v.index}).destruct()
-                        cleanDeck=false
-                        break end end end
-        wait(2)
-        deck.shuffle()
-        while #deck.getObjects()>blackMarketMax do
-          coroutine.yield(0)
-          deck.takeObject({index=1}).destruct()
-        end
+  function SetBlackMarket(sourceDeck)
+    local killCard = function(srcDeck,cardGUID) srcDeck.takeObject({guid=cardGUID}).destruct() end
+    local AddRandomFromPile = function(srcDeck,pileName) 
+      local swapPile = ref_replacementPiles[cardPileName].obj
+      swapPile.shuffle()
+      Use.add(swapPile.getObjects()[1].name)
+      srcDeck.putObject(swapPile.takeObject({flip=true}))
+    end
+
+    sourceDeck.setName('Black Market deck')
+    for i,v in ipairs(sourceDeck.getObjects()) do
+      local cardPileName = v.name.." pile"
+
+      --remove excess or event type cards 
+      if i > blackMarketMax or IsNotSupply(v.name) then
+        killCard(sourceDeck,v.guid)
+      elseif (ref_replacementPiles[cardPileName]) then -- replace a replace card
+        killCard(sourceDeck,v.guid)
+        AddRandomFromPile(sourceDeck,cardPileName)
+      else
+        Use.add(v.name)
       end
-      if deck.getName()=='Black Market deck'then
-        for i, card in ipairs(deck.getObjects())do
-          Use.Add(card.nickname)
-          table.insert(bmDeck, card.nickname)
+    end
+  end
+
+  -- returns true when the Bane card is blackMarket
+  function ResolveBane(sourceDeck)
+    local baneCard = GetCardFromZoneGUID(ref.baneSlot.zone)
+    if baneCard then Use.Add(baneCard.getName()) return baneCard.getName()=='Black Market' end
+    
+    --no card find a valid one
+    for j, card in ipairs(sourceDeck.getObjects()) do
+      local cardName = card.name
+      local cardData = getCardInfo(cardName)
+
+      --only check cards with the right cost
+      if cardData.cost == 'M2D0P0' or cardData.cost == 'M3D0P0' then
+        --only use a card that is supply, double neagative
+        if not IsNotSupply(cardName) then
+          sourceDeck.takeObject({position=ref.baneSlot.pos, index=card.index, flip=true})  
+          return cardName == 'Black Market'
         end
       end
     end
+    -- no bade card found
+    spawnObjectJSON({json = ref_ForcePixieBane })
+    broadcastToAll('No valid bane found, forcing Pixie',{0.9,0.1,0.9})
+    return false
+  end
+
+  function setupKingdomCoroutine()
+    local deck=false
+    for i, v in ipairs(getObjectFromGUID(ref.randomizer.zone).getObjects())do if v.tag=='Deck'then deck=v end end
+    if not deck then return FinishKingdomSetup() end
+
+    local blackMarket = Use('BlackMarket')
+    local requireBane = Use('YoungWitch')
+    if (not blackMarket) and (not requireBane) then return FinishKingdomSetup() end -- don't need the checks
   
+    --if witch find valid bane card
+    if requireBane then 
+      blackMarket = ResolveBane(deck) 
+    end
   
+    --if we don't require bane yet and we do require blackmarket then we might find witch in black market
+    --do this first just to ensure we deal with bane first
+    if blackMarket and not requireBane then
+      --pseudoBlackMarketCount (pBMC)
+      local pBMC = 0
+      for j, card in ipairs(deck.getObjects()) do
+        if card.name == "Young Witch" then ResolveBane(deck) break end
+        if not IsNotSupply(card.name) then 
+          pBMC = pBMC + 1
+          if pBMC == blackMarketMax then break end 
+        end
+      end
+    end
+
+    -- if blackMarket ensure valid cards
+    if blackMarket then
+      SetBlackMarket(deck)
+    end
   
+    return FinishKingdomSetup()
+  end
   
+  --note must be called from kindom coroutine
+  function FinishKingdomSetup()
     wait(1)
     reorderKingdom()
     wait(0.5)
     createPile()
     return 1
   end
-  
   
   
   -- Callback to fix the event position
@@ -1164,12 +1043,16 @@ function onSave()
                   obeliskPiles =nil
               end break
       end end end --end
-      if Use('BlackMarket')then pos=blackMarketDeck.getPosition()local g=0
+      local blackMarketDeck = nil
+      for i, v in ipairs(getObjectFromGUID(ref.randomizer.zone).getObjects()) do if v.tag=='Deck'then blackMarketDeck=v end end
+      if blackMarketDeck and Use('BlackMarket')then 
+        pos=blackMarketDeck.getPosition()
+        local g=0
         for i,card in ipairs(blackMarketDeck.getObjects())do
-          if getType(card.getName()):find('Gathering')then g=g+1
-            if     g==1 then tokenMake(blackMarketDeck,'vp',0,nil,card.nickname)
-            elseif g==2 then tokenMake(blackMarketDeck,'vp',0,{0.9,1,-1.25},card.nickname)
-            else   tokenMake(blackMarketDeck,'vp',0,{-0.9,1,-1.25},card.nickname)
+          if getType(card.name):find('Gathering')then g=g+1
+            if     g==1 then tokenMake(blackMarketDeck,'vp',0,nil,card.name)
+            elseif g==2 then tokenMake(blackMarketDeck,'vp',0,{0.9,1,-1.25},card.name)
+            else   tokenMake(blackMarketDeck,'vp',0,{-0.9,1,-1.25},card.name)
       end end end end
       wait(1)
       for _,v in pairs(ref_tokenBag)do getObjectFromGUID(v).destruct()end
@@ -1191,7 +1074,7 @@ function onSave()
             if getPlayerCount()==2 then
               for _,name in pairs({'Humble Castle','Small Castle','Opulent Castle','King\'s Castle'})do
                 for l, card in ipairs(getPile('Castles pile').getObjects())do
-                  if card.nickname==name then
+                  if card.name==name then
                     getPile('Castles pile').takeObject({index=card.index}).destruct()
                     break end end end end
           --If we have a victory card and 2 players, we make 8 copies
@@ -1227,13 +1110,13 @@ function onSave()
         if getPlayerCount()==2 and v.getName()=='Castles'then v.destruct()getPile('Castles pile').setPosition(ref.baneSlot.pos)
           for k=1,4 do
             for l,card in ipairs(castlesPile.getObjects())do
-              if k==1 and card.nickname=='Humble Castle'then
+              if k==1 and card.name=='Humble Castle'then
                 getPile('Castles pile').takeObject({index=card.index}).destruct()break
-              elseif k==2 and card.nickname=='Small Castle'then
+              elseif k==2 and card.name=='Small Castle'then
                 getPile('Castles pile').takeObject({index=card.index}).destruct()break
-              elseif k==3 and card.nickname=='Opulent Castle'then
+              elseif k==3 and card.name=='Opulent Castle'then
                 getPile('Castles pile').takeObject({index=card.index}).destruct()break
-              elseif k==4 and card.nickname=='King\'s Castle'then
+              elseif k==4 and card.name=='King\'s Castle'then
                 getPile('Castles pile').takeObject({index=card.index}).destruct()break
           end end end
         --Then we do 3+ player Castles
@@ -1272,9 +1155,11 @@ function onSave()
               v.setName(v.takeObject({position=v.getPosition()}).getName()..' pile')
       end end end cleanUp()return 1
     end startLuaCoroutine(Global, 'createPileCoroutine')end
+  function IsNotSupply(n) local tp = getType(n) return tp=='Event'or tp=='Landmark'or tp=='Project'or tp=='Way' end
+  function getCardInfo(n) for _,v in pairs(ref_master)do if n==v.name then return v end end return {cost='M0D0P0',type='Event',VP=0} end
   function getVP(n)for _,v in pairs(ref_master)do if n==v.name then if v.VP then return v.VP end return 0 end end end
-  function getCost(n)for _,v in pairs(ref_master)do if n==v.name then return v.cost end end return'M0D0P0'end
-  function getType(n)for _,v in pairs(ref_master)do if n==v.name then return v.type end end return'Event'end
+  function getCost(n) return getCardInfo(n).cost end 
+  function getType(n) return getCardInfo(n).type end
   function getSetup(n)if Use(n:gsub(' ',''))then for _,v in pairs(ref_master)do if n==v.name then if v.setup then return v.setup end end end end return function()end end
   function getPile(pileName)
     if ref_replacementPiles[pileName] then return ref_replacementPiles[pileName].obj end
@@ -1382,6 +1267,7 @@ function onSave()
     local total=pile.getQuantity()-count
     while pile.getQuantity()>total do pile.takeObject({}).destruct()
   end end
+  function GetCardFromZoneGUID(zoneGUID)  for i, v in ipairs(getObjectFromGUID(zoneGUID).getObjects())do if v.tag=='Card' then return v end end end
   -- Function to get a count of players sitting at the table with hands to be dealt to.
   function getPlayerCount()local c=#getSeatedPlayers()for i=1,#getSeatedPlayers()do if Player[getSeatedPlayers()[i]].getHandCount()<1 then p=p-1 end end if c==1 then return 6 end return c end
   -- Function to wait during coroutines
@@ -1559,7 +1445,9 @@ function onSave()
   {name='Menagerie Ways'},
   {name='Summon'},
   {name='Adamabrams Extras'}}
-  --Name of all cards along with costs, used for sorting
+--default card generations code for bane card
+  ref_ForcePixieBane = '{"GUID":"af8251","Name":"Card","Transform":{"posX":14.9998894,"posY":1.22360492,"posZ":21.9998837,"rotX":2.45286582E-08,"rotY":180.0,"rotZ":-1.52320453E-07,"scaleX":1.87763953,"scaleY":1.0,"scaleZ":1.87763953},"Nickname":"Pixie","Description":"","GMNotes":"","ColorDiffuse":{"r":0.713235259,"g":0.713235259,"b":0.713235259},"LayoutGroupSortIndex":0,"Value":0,"Locked":false,"Grid":true,"Snap":true,"IgnoreFoW":false,"MeasureMovement":false,"DragSelectable":true,"Autoraise":true,"Sticky":true,"Tooltip":true,"GridProjection":false,"HideWhenFaceDown":true,"Hands":true,"CardID":40202,"SidewaysCard":false,"CustomDeck":{"402":{"FaceURL":"http://cloud-3.steamusercontent.com/ugc/939437582926061718/435C1CC5E7D59F4BCE1070E2706C1EC5D8A93E09/","BackURL":"http://cloud-3.steamusercontent.com/ugc/482272972286453570/660AD27C5F3A9BA42322C99BE5E4BD3F0AF8F91B/","NumWidth":10,"NumHeight":5,"BackIsHidden":true,"UniqueBack":false,"Type":0}},"LuaScript":"","LuaScriptState":"","XmlUI":""}'
+--Name of all cards along with costs, used for sorting
   ref_master={
   {cost='M0D0P0',name='Copper',type='Treasure'},
   {cost='M3D0P0',name='Silver',type='Treasure'},
