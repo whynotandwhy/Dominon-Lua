@@ -527,6 +527,15 @@ function onSave()
     --click_StartGame(obj,color)
   end
   
+  function EXTSetforcePile(perams)
+    obj = perams.setPlatinum and getObjectFromGUID(ref_extraSupplyPiles[1].guid) or getObjectFromGUID(ref_extraSupplyPiles[5].guid)
+    while true do
+       targetValue = perams.setPlatinum and usePlatinum or useShelters
+      if targetValue == perams.target then return end
+      click_forcePile(obj,nil)
+    end
+  end
+
   function click_forcePile(obj, color)
       local guid,c=obj.getGUID(),{1,1,1}
       if guid==ref_extraSupplyPiles[1].guid then
