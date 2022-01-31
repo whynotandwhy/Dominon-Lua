@@ -1155,6 +1155,7 @@ function onSave()
               v.setName(v.takeObject({position=v.getPosition()}).getName()..' pile')
       end end end cleanUp()return 1
     end startLuaCoroutine(Global, 'createPileCoroutine')end
+  function EXTgetCardInfo(perams) return getCardInfo(perams.cardName) end
   function IsNotSupply(n) local tp = getType(n) return tp=='Event'or tp=='Landmark'or tp=='Project'or tp=='Way' end
   function getCardInfo(n) for _,v in pairs(ref_master)do if n==v.name then return v end end return {cost='M0D0P0',type='Event',VP=0} end
   function getVP(n)for _,v in pairs(ref_master)do if n==v.name then if v.VP then return v.VP end return 0 end end end
