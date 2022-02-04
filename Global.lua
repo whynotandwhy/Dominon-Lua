@@ -776,9 +776,9 @@ function onSave()
   function SetBlackMarket(sourceDeck)
     local killCard = function(srcDeck,cardGUID) srcDeck.takeObject({guid=cardGUID}).destruct() end
     local AddRandomFromPile = function(srcDeck,pileName) 
-      local swapPile = ref_replacementPiles[cardPileName].obj
+      local swapPile = ref_replacementPiles[pileName].obj
       swapPile.shuffle()
-      Use.add(swapPile.getObjects()[1].name)
+      Use.Add(swapPile.getObjects()[1].name)
       srcDeck.putObject(swapPile.takeObject({flip=true}))
     end
 
@@ -793,7 +793,7 @@ function onSave()
         killCard(sourceDeck,v.guid)
         AddRandomFromPile(sourceDeck,cardPileName)
       else
-        Use.add(v.name)
+        Use.Add(v.name)
       end
     end
   end
@@ -1768,7 +1768,7 @@ function onSave()
   {cost='D4M0P0',name='Engineer',type='Action'},
   {cost='M3D0P0',name='Farmers\' Market',type='Action - Gathering'},
   {cost='M5D0P0',name='Forum',type='Action'},
-  {cost='M3D0P0',name='Gladiator / Fortune',type='Action'},
+  {cost='M3D0P0',name='Gladiator / Fortune',type='Action', depend="Debt"},
   {cost='M5D0P0',name='Groundskeeper',type='Action',depend='VP'},
   {cost='M5D0P0',name='Legionary',type='Action - Attack'},
   {cost='M2D0P0',name='Patrician / Emporium',type='Action',depend='VP'},
