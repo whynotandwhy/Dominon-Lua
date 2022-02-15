@@ -682,6 +682,7 @@ function ResolveBane(sourceDeck)
       --only use a card that is supply, double neagative
       if not IsNotSupply(cardName) then
         sourceDeck.takeObject({position=ref.baneSlot.pos, index=card.index, flip=true})
+        Use.Add(cardName)
         return cardName == 'Black Market'
       end
     end
